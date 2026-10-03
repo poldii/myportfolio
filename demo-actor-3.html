@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Матвей Ларин — актёр, который переодевается вместе с сайтом</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,500&family=Rubik+Mono+One&family=Unbounded:wght@200;800&family=Ruslan+Display&family=PT+Mono&family=Literata:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+[data-role=trigorin]{--paper:#e5e9e3;--ink:#1c2a26;--acc:#4f7a6c;--disp:'Cormorant Garamond',serif;--dw:300;--dst:italic;--dsize:clamp(70px,16vw,180px);--lh:.86;--ls:-.02em;--h2:clamp(30px,5vw,50px);--fs:18px;--gap:84px}
+[data-role=lopakhin]{--paper:#f0c419;--ink:#121212;--acc:#fff;--disp:'Rubik Mono One',sans-serif;--dw:400;--dst:normal;--dsize:clamp(40px,12vw,132px);--lh:1;--ls:-.04em;--h2:clamp(18px,3vw,28px);--fs:17px;--gap:64px}
+[data-role=chemodan]{--paper:#f5f4f0;--ink:#8d8d88;--acc:#222;--disp:'Unbounded',sans-serif;--dw:200;--dst:normal;--dsize:14px;--lh:1.5;--ls:.5em;--h2:13px;--fs:13px;--gap:200px}
+[data-role=edgar]{--paper:#15171c;--ink:#e7e4dc;--acc:#9db4ff;--disp:'Ruslan Display',serif;--dw:400;--dst:normal;--dsize:clamp(54px,12.5vw,150px);--lh:.92;--ls:0;--h2:clamp(26px,4.4vw,42px);--fs:18px;--gap:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:var(--fs)/1.7 'Literata',Georgia,serif;transition:background .1s}
+.page{max-width:980px;margin:0 auto;padding:0 20px}
+.mono{font-family:'PT Mono','Courier New',monospace}
+.top{display:flex;justify-content:space-between;gap:12px;padding-top:28px;font:13px 'PT Mono',monospace}
+.hero{min-height:88vh;display:flex;flex-direction:column;padding-bottom:24px}
+.name{font:var(--dw) var(--dsize)/var(--lh) var(--disp);font-style:var(--dst);letter-spacing:var(--ls);margin:auto 0 28px;display:grid}
+.n{display:block}.n2,.n3{display:none}
+.name.upper .n{text-transform:uppercase}
+[data-role=lopakhin] .name .n{text-transform:uppercase}
+[data-role=edgar] .name{margin-top:60px}
+[data-role=edgar] .n{display:block;position:relative}
+[data-role=edgar] .n1{opacity:.25;transform:translateX(-5vw) rotate(-2deg)}
+[data-role=edgar] .n2{opacity:.55;transform:translateX(7vw) skewX(-9deg);margin-top:-.25em}
+[data-role=edgar] .n3{margin-top:-.25em;color:var(--acc)}
+[data-role=edgar] .n::before{content:attr(data-l);position:absolute;left:0;top:-.1em;font:13px 'PT Mono',monospace;color:var(--acc);letter-spacing:0}
+[data-role=chemodan] .name{margin:auto 0 18px}
+.dir{font:15px/1.6 'PT Mono',monospace;margin:0 0 10px;max-width:520px}
+.dir::before{content:"("}.dir::after{content:")"}
+.hint{font:13px/1.5 'PT Mono',monospace;opacity:.7;max-width:420px;margin:0}
+section{padding:var(--gap) 0 0}
+h2{font:var(--dw) var(--h2)/1.15 var(--disp);font-style:var(--dst);letter-spacing:0;margin:0 0 22px}
+[data-role=chemodan] h2{letter-spacing:.3em}
+.meta{font:14px 'PT Mono',monospace;margin:0 0 18px;opacity:.75}
+p.lead{max-width:590px;margin:0 0 16px}
+.said{font:var(--dw) clamp(22px,4vw,38px)/1.25 var(--disp);font-style:var(--dst);letter-spacing:0;color:var(--acc);max-width:620px;margin:34px 0 0;min-height:1.3em}
+[data-role=chemodan] .said{font-size:13px;letter-spacing:.3em}
+[data-role=lopakhin] .said{font-size:clamp(17px,2.6vw,26px);color:var(--ink);background:var(--acc);display:inline-block;padding:8px 12px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:26px 0 0;font:15px/1.5 'PT Mono',monospace}
+.facts dt{opacity:.65}.facts dd{margin:0}
+.contact a{display:block;font:var(--dw) clamp(18px,4.2vw,38px)/1.25 var(--disp);font-style:var(--dst);letter-spacing:0;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--acc);width:fit-content;max-width:100%;overflow-wrap:anywhere;margin:12px 0}
+[data-role=chemodan] .contact a{font-size:13px;letter-spacing:.2em;border-bottom-width:1px}
+.contact a:hover,.contact a:focus-visible{color:var(--acc);outline:none}
+footer{padding:var(--gap) 0 24px;font:13px 'PT Mono',monospace;opacity:.6}
+/* вешалка */
+.rack{position:fixed;left:0;right:0;bottom:0;z-index:5;background:var(--paper);border-top:1px solid var(--ink);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:8px;align-items:center;overflow-x:auto}
+.rack span{font:12px 'PT Mono',monospace;white-space:nowrap;margin-right:4px;opacity:.7}
+.rack button{font:13px 'PT Mono',monospace;color:var(--ink);background:none;border:1px solid var(--ink);padding:8px 14px;cursor:pointer;white-space:nowrap;border-radius:0}
+.rack button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.rack button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+#wipe{position:fixed;inset:0;z-index:9;transform:translateX(100%);display:grid;place-items:center;font:14px 'PT Mono',monospace;color:#000;pointer-events:none}
+@media(max-width:700px){.rack span{display:none}}
+@media(prefers-reduced-motion:reduce){#wipe{display:none}}
+</style>
+</head>
+<body data-role="trigorin">
+<div class="page">
+  <div class="top"><span>Матвей Ларин, актёр</span><span id="state">в роли: Тригорин</span></div>
+  <header class="hero">
+    <h1 class="name" id="name"></h1>
+    <p class="dir" id="tag"></p>
+    <p class="hint">Внизу вешалка. Выберите, кого я играю сегодня, и сайт переоденется вместе со мной.</p>
+  </header>
+
+  <section>
+    <h2 id="roleName"></h2>
+    <p class="meta" id="play"></p>
+    <p class="lead" id="para"></p>
+    <p class="said" id="said"></p>
+  </section>
+
+  <section>
+    <h2>Вне роли</h2>
+    <p class="lead">Мне тридцать четыре. ГИТИС, семь лет в репертуарном театре, три года на независимых площадках. Люблю паузы длиннее, чем принято, и залы, где видно лица зрителей.</p>
+    <dl class="facts">
+      <dt>Рост</dt><dd>181 см</dd>
+      <dt>Голос</dt><dd>баритон, поёт, но предупреждает заранее</dd>
+      <dt>Языки</dt><dd>русский, английский, немецкий (сцена)</dd>
+      <dt>Навыки</dt><dd>гитара, сценический бой, вождение</dd>
+      <dt>Города</dt><dd>Москва, готов к гастролям</dd>
+    </dl>
+  </section>
+
+  <section class="contact">
+    <h2>Позвать на роль</h2>
+    <a href="mailto:matvey@example.com">matvey@example.com</a>
+    <a href="tel:+70000000000">+7 000 000 00 00</a>
+    <a href="#">Telegram: @larin_na_stsene</a>
+  </section>
+  <footer>Костюм сменится, актёр останется.</footer>
+</div>
+
+<div class="rack" id="rack" role="group" aria-label="Выбор роли"><span>сегодня играю:</span></div>
+<div id="wipe" aria-hidden="true">переодевание</div>
+
+<script>
+(function(){
+var R={
+ trigorin:{b:'Тригорин',paper:'#e5e9e3',tag:'достаёт блокнот. записывает вас',play:'«Чайка» · Городской драматический театр · 2023–н.в.',para:'Писатель, который записывает чужую боль в блокнот, пока она ещё тёплая. Играл его без пафоса: человек просто не может перестать смотреть.',said:'Вы сейчас сказали это случайно. Я это запишу.'},
+ lopakhin:{b:'Лопахин',paper:'#f0c419',tag:'входит быстро. деньги посчитаны, сад нет',play:'«Вишнёвый сад» · Новая сцена · 2021–2024',para:'Купил сад и не знает, что с ним делать. Весь третий акт на одном дыхании, которое никак не выдохнуть.',said:'Подпишите здесь. Сад подождёт.'},
+ chemodan:{b:'Человек с чемоданом',paper:'#f5f4f0',tag:'ставит чемодан. слов не будет',play:'«Перрон», моноспектакль · подвал на Покровке · 2022',para:'Шестьдесят минут, один чемодан, ни одного слова вслух. Зрители сидели так близко, что слышали, как он считает шаги.',said:'…'},
+ edgar:{b:'Эдгар',paper:'#15171c',tag:'нищий. безумец. сын. кто из них вас встретит, решаете вы',play:'«Король Лир» · театр на Таганке · 2019–2021',para:'Роль-перевёртыш: нищий, безумец, сын. Три тела в одном; переодеваться приходилось прямо на глазах у зала.',said:'Кто я сегодня — решите вы.'}
+};
+var body=document.body,wipe=document.getElementById('wipe'),rack=document.getElementById('rack'),busy=false;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $(i){return document.getElementById(i)}
+function apply(k){
+  var r=R[k];body.dataset.role=k;
+  var nm=$('name');nm.innerHTML='';
+  var labels=k==='edgar'?['нищий','безумец','сын']:['','',''];
+  for(var i=1;i<=3;i++){var s=document.createElement('span');s.className='n n'+i;s.dataset.l=labels[i-1];s.innerHTML='Матвей<br>Ларин';if(i>1&&k!=='edgar')s.style.display='none';if(i>1)s.setAttribute('aria-hidden','true');nm.appendChild(s)}
+  $('state').textContent='в роли: '+r.b;$('tag').textContent=r.tag;$('roleName').textContent=r.b;
+  $('play').textContent=r.play;$('para').textContent=r.para;$('said').textContent=r.said;
+  rack.querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.k===k)});
+  window.scrollTo(0,0);
+}
+function go(k){
+  if(busy||body.dataset.role===k)return;
+  if(reduce){apply(k);return}
+  busy=true;wipe.style.transition='none';wipe.style.background=R[k].paper;wipe.style.transform='translateX(100%)';wipe.offsetWidth;
+  wipe.style.transition='transform .38s cubic-bezier(.7,0,.3,1)';wipe.style.transform='translateX(0)';
+  setTimeout(function(){apply(k);wipe.style.transform='translateX(-100%)';setTimeout(function(){busy=false},420)},420);
+}
+Object.keys(R).forEach(function(k){var b=document.createElement('button');b.textContent=R[k].b;b.dataset.k=k;b.onclick=function(){go(k)};rack.appendChild(b)});
+apply('trigorin');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Елена Сергеевна | Репетитор по математике (ОГЭ и ЕГЭ)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        academicCream: '#FAF8F5',
+                        academicCard: '#F3EFEA',
+                        academicDark: '#1E2022',
+                        academicTerracotta: '#D35400',
+                        academicEmerald: '#16A085',
+                        academicBorder: '#E5DFD5',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAF8F5;
+            color: #1E2022;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        .academic-card {
+            background: #FFFFFF;
+            border: 1px solid #E5DFD5;
+            transition: all 0.3s ease;
+        }
+        .academic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(30, 32, 34, 0.06);
+            border-color: #D35400;
+        }
+        .terracotta-gradient {
+            background: linear-gradient(135deg, #D35400 0%, #E67E22 100%);
+        }
+        .emerald-gradient {
+            background: linear-gradient(135deg, #16A085 0%, #1ABC9C 100%);
+        }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] text-[#1E2022] antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E5DFD5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl terracotta-gradient flex items-center justify-center font-serif font-bold text-white text-xl shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
+                    M
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg tracking-tight text-[#1E2022] block leading-tight">Елена Сергеевна</span>
+                    <span class="text-xs text-[#D35400] font-medium tracking-wider">Математика • ОГЭ / ЕГЭ</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-[#1E2022]/80">
+                <a href="#about" class="hover:text-[#D35400] transition-colors">Обо мне</a>
+                <a href="#directions" class="hover:text-[#D35400] transition-colors">Направления</a>
+                <a href="#quiz" class="hover:text-[#D35400] transition-colors">Мини-тест</a>
+                <a href="#tariffs" class="hover:text-[#D35400] transition-colors">Стоимость</a>
+                <a href="#faq" class="hover:text-[#D35400] transition-colors">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl terracotta-gradient font-medium text-sm text-white shadow-md shadow-orange-600/20 transition-all hover:scale-105 active:scale-95">
+                    <i class="fas fa-calendar-check"></i> Записаться
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-[#1E2022] text-2xl p-2 focus:outline-none" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#FAF8F5] border-b border-[#E5DFD5] px-6 py-6 space-y-4 shadow-xl">
+            <a href="#about" class="mobile-link block text-[#1E2022] hover:text-[#D35400] font-medium py-1">Обо мне</a>
+            <a href="#directions" class="mobile-link block text-[#1E2022] hover:text-[#D35400] font-medium py-1">Направления</a>
+            <a href="#quiz" class="mobile-link block text-[#1E2022] hover:text-[#D35400] font-medium py-1">Мини-тест</a>
+            <a href="#tariffs" class="mobile-link block text-[#1E2022] hover:text-[#D35400] font-medium py-1">Стоимость</a>
+            <a href="#faq" class="mobile-link block text-[#1E2022] hover:text-[#D35400] font-medium py-1">FAQ</a>
+            <div class="pt-2">
+                <a href="#contact" class="mobile-link flex items-center justify-center gap-2 w-full py-3 rounded-xl terracotta-gradient text-white font-medium shadow-md">
+                    Записаться на диагностику
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F3EFEA] border border-[#E5DFD5] text-[#D35400] text-xs sm:text-sm font-medium mx-auto lg:mx-0">
+                        <i class="fas fa-graduation-cap"></i> Экспертная подготовка к экзаменам с 2014 года
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-[1.15] text-[#1E2022]">
+                        Математика без страха и зубрежки: от пробелов до <span class="text-[#D35400] italic">90+ на ЕГЭ</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-[#1E2022]/80 max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
+                        Помогаю ученикам 7–11 классов полюбить предмет, разложить сложные формулы по полочкам и поступить на бюджет в ведущие вузы страны.
+                    </p>
+
+                    <!-- Trust indicators -->
+                    <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
+                        <div class="academic-card p-4 rounded-2xl text-center">
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#D35400]">12 лет</div>
+                            <div class="text-[11px] sm:text-xs text-[#1E2022]/70 mt-1">Опыта работы</div>
+                        </div>
+                        <div class="academic-card p-4 rounded-2xl text-center">
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#16A085]">86 баллов</div>
+                            <div class="text-[11px] sm:text-xs text-[#1E2022]/70 mt-1">Средний балл ЕГЭ</div>
+                        </div>
+                        <div class="academic-card p-4 rounded-2xl text-center">
+                            <div class="text-2xl sm:text-3xl font-serif font-bold text-[#D35400]">350+</div>
+                        <div class="text-[11px] sm:text-xs text-[#1E2022]/70 mt-1">Учеников сдали ОГЭ/ЕГЭ</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-2xl terracotta-gradient text-white font-medium shadow-lg shadow-orange-600/20 transition-all hover:scale-105 active:scale-95 text-center">
+                            Записаться на бесплатную диагностику <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#quiz" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#F3EFEA] hover:bg-[#E5DFD5] font-medium text-[#1E2022] transition-all text-center border border-[#E5DFD5]">
+                            Пройти мини-тест <i class="fas fa-puzzle-piece ml-2 text-[#D35400] text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image / Card Placeholder -->
+                <div class="lg:col-span-5 w-full max-w-md mx-auto lg:max-w-none">
+                    <div class="relative">
+                        <div class="absolute -inset-2 rounded-3xl terracotta-gradient opacity-10 blur-xl"></div>
+                        <div class="academic-card p-6 sm:p-8 rounded-3xl relative shadow-xl space-y-6">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-[#F3EFEA] relative flex items-center justify-center">
+                                <!-- Realistic Placeholder Image -->
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Елена Сергеевна - преподаватель математики" class="w-full h-full object-cover">
+                                <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-[#E5DFD5] shadow-sm">
+                                    <div class="font-serif font-bold text-[#1E2022]">Елена Сергеевна</div>
+                                    <div class="text-xs text-[#D35400]">Выпускница мехмата МГУ, эксперт ОГЭ/ЕГЭ</div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 pt-2">
+                                <div class="flex items-center gap-3 text-sm text-[#1E2022]/80">
+                                    <i class="fas fa-check-circle text-[#16A085]"></i>
+                                    <span>Индивидуальный подход под цель ученика</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-[#1E2022]/80">
+                                    <i class="fas fa-check-circle text-[#16A085]"></i>
+                                    <span>Понятное объяснение сложных теорем простым языком</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#F3EFEA]/50 border-t border-b border-[#E5DFD5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">О преподавателе</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold leading-tight text-[#1E2022]">«Математика — это не набор формул для зазубривания, а язык, описывающий мир»</h2>
+                    <p class="text-[#1E2022]/80 leading-relaxed text-sm sm:text-base">
+                        Меня зовут Елена Сергеевна. Я преподаю математику более 12 лет. Моя главная задача — избавить ребенка от страха перед белым листом на экзамене и выстроить четкую логику решения задач любой сложности.
+                    </p>
+                    <p class="text-[#1E2022]/70 leading-relaxed text-sm">
+                        За годы практики я разработала собственную методику устранения пробелов из предыдущих классов без лишней стрессовой нагрузки.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="academic-card p-4 rounded-2xl">
+                            <div class="text-[#D35400] font-serif font-bold text-lg mb-1">МГУ им. М.В. Ломоносова</div>
+                            <p class="text-xs text-[#1E2022]/70">Механико-математический факультет (диплом с отличием)</p>
+                        </div>
+                        <div class="academic-card p-4 rounded-2xl">
+                            <div class="text-[#16A085] font-serif font-bold text-lg mb-1">Эксперт ЕГЭ</div>
+                            <p class="text-xs text-[#1E2022]/70">Официальная подготовка и знание критериев проверки</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="academic-card p-6 sm:p-8 rounded-3xl space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] flex items-center justify-center text-xl">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-[#1E2022]">Индивидуальная траектория</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">На первой диагностике выявляем слабые места и строим план занятий ровно под целевой балл ученика.</p>
+                    </div>
+
+                    <div class="academic-card p-6 sm:p-8 rounded-3xl space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#16A085] flex items-center justify-center text-xl">
+                            <i class="fas fa-glasses"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-[#1E2022]">Разбор типичных ловушек</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Учимся замечать скрытые условия в задачах части №2 (параметры, экономические задачи, геометрия).</p>
+                    </div>
+
+                    <div class="academic-card p-6 sm:p-8 rounded-3xl space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] flex items-center justify-center text-xl">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-[#1E2022]">Современный формат</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Интерактивные онлайн-доски, графический планшет, видеозаписи всех уроков и конспекты.</p>
+                    </div>
+
+                    <div class="academic-card p-6 sm:p-8 rounded-3xl space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#16A085] flex items-center justify-center text-xl">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-[#1E2022]">Поддержка 24/7</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Возможность задать вопрос по домашней работе в мессенджере в любой день недели между уроками.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Directions Section -->
+    <section id="directions" class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-[#F3EFEA] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Направления занятий</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1E2022]">Программы подготовки для любого класса</h2>
+                <p class="text-[#1E2022]/70 max-w-xl mx-auto text-sm sm:text-base">От подтягивания текущей успеваемости до побед в олимпиадах и максимальных баллов на экзаменах.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Direction 1 -->
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] flex items-center justify-center font-serif font-bold text-lg">
+                            7-9
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">Средняя школа и ОГЭ</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Ликвидация пробелов в алгебре и геометрии, уверенная подготовка к ОГЭ на оценку «4» и «5» без стресса.</p>
+                        
+                        <ul class="space-y-2.5 text-sm text-[#1E2022]/80 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Понятная геометрия с нуля</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Разбор всех типов заданий ОГЭ</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Регулярные мини-тесты</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-[#E5DFD5]">
+                        <a href="#contact" class="block w-full py-3 rounded-xl bg-[#F3EFEA] hover:bg-[#E5DFD5] text-center font-medium text-[#1E2022] transition-all text-sm">
+                            Записаться на ОГЭ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direction 2 (Featured) -->
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between border-2 border-[#D35400] relative shadow-lg">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full terracotta-gradient text-white text-xs font-medium shadow-sm">
+                        Хит подготовки
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="w-12 h-12 rounded-2xl terracotta-gradient text-white flex items-center justify-center font-serif font-bold text-lg">
+                            10-11
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">ЕГЭ Профильный уровень</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Максимальная подготовка на 80–90+ баллов для поступления на бюджет в IT, инженерные и экономические вузы.</p>
+                        
+                        <ul class="space-y-2.5 text-sm text-[#1E2022]/80 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Сложные задачи части №2 (13-19)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Финансовая математика и параметры</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Строгие критерии оформления</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-[#E5DFD5]">
+                        <a href="#contact" class="block w-full py-3.5 rounded-xl terracotta-gradient text-center font-medium text-white shadow-md transition-all text-sm">
+                            Записаться на ЕГЭ
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direction 3 -->
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#16A085] flex items-center justify-center font-serif font-bold text-lg">
+                            ★
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">Олимпиады и углубление</h3>
+                        <p class="text-sm text-[#1E2022]/70 leading-relaxed">Развитие нестандартного мышления, решение олимпиадных задач повышенной сложности и подготовка к перечневым олимпиадам.</p>
+                        
+                        <ul class="space-y-2.5 text-sm text-[#1E2022]/80 pt-2">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> Олимпиадные трюки и методы</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> Развитие логики и смекалки</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> Индивидуальный подбор задач</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-6 border-t border-[#E5DFD5]">
+                        <a href="#contact" class="block w-full py-3 rounded-xl bg-[#F3EFEA] hover:bg-[#E5DFD5] text-center font-medium text-[#1E2022] transition-all text-sm">
+                            Обсудить олимпиады
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Math Quiz / Warmup Section -->
+    <section id="quiz" class="py-24 bg-[#F3EFEA]/60 border-t border-b border-[#E5DFD5]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Интерактивная разминка</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1E2022]">Проверьте свои силы прямо сейчас</h2>
+                <p class="text-[#1E2022]/70 max-w-xl mx-auto text-sm sm:text-base">Выберите уровень сложности и решите небольшую задачу из экзамена.</p>
+            </div>
+
+            <!-- Quiz Box -->
+            <div class="academic-card p-6 sm:p-10 rounded-3xl shadow-xl space-y-6">
+                <!-- Level Selector Tabs -->
+                <div class="flex justify-center gap-2 sm:gap-4 pb-4 border-b border-[#E5DFD5]">
+                    <button onclick="setQuizLevel('easy')" id="btnEasy" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#D35400] text-white">
+                        Легкий (База)
+                    </button>
+                    <button onclick="setQuizLevel('medium')" id="btnMedium" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#FAF8F5] text-[#1E2022] border border-[#E5DFD5]">
+                        Средний (ОГЭ)
+                    </button>
+                    <button onclick="setQuizLevel('hard')" id="btnHard" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#FAF8F5] text-[#1E2022] border border-[#E5DFD5]">
+                        Сложный (ЕГЭ)
+                    </button>
+                </div>
+
+                <!-- Quiz Question Display -->
+                <div class="space-y-4 py-2 text-center">
+                    <div id="quizCategoryTag" class="text-xs text-[#D35400] font-medium uppercase tracking-wider">Алгебра / Уравнения</div>
+                    <h3 id="quizQuestionText" class="text-lg sm:text-xl font-serif font-semibold text-[#1E2022] max-w-2xl mx-auto">
+                        Найдите корень уравнения: 2^(3x - 1) = 32
+                    </h3>
+                </div>
+
+                <!-- Options Grid -->
+                <div id="quizOptions" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <!-- Generated via JS -->
+                </div>
+
+                <!-- Feedback Area -->
+                <div id="quizFeedback" class="hidden p-4 rounded-xl text-center text-sm font-medium"></div>
+
+                <div class="text-center pt-2">
+                    <button onclick="resetQuiz()" class="text-xs text-[#1E2022]/60 hover:text-[#D35400] underline transition-colors">
+                        Сбросить / Начать заново
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results & Reviews Section -->
+    <section class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-[#F3EFEA] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Результаты учеников</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1E2022]">Истории успеха и реальные баллы</h2>
+                <p class="text-[#1E2022]/70 max-w-xl mx-auto text-sm sm:text-base">Каждый год мои ученики подтверждают высокий уровень подготовки на экзаменах.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-[#1E2022]">Михаил В.</h3>
+                                <span class="text-xs text-[#1E2022]/60">ЕГЭ Профиль</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#E8F8F5] text-[#16A085] flex items-center justify-center font-serif font-bold text-lg">
+                                92
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#1E2022]/80 italic font-light leading-relaxed">
+                            "Начинали с 45 баллов в 10 классе. Елена Сергеевна наумила не бояться параметров и сложной геометрии. Поступил на бюджет в МГТУ им. Баумана!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-[#E5DFD5] text-xs text-[#1E2022]/60 flex items-center justify-between">
+                        <span>Занимался 2 года</span>
+                        <span class="text-[#16A085] font-medium">Бюджет, Бауманка</span>
+                    </div>
+                </div>
+
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-[#1E2022]">Анастасия П.</h3>
+                                <span class="text-xs text-[#1E2022]/60">ОГЭ по математике</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#FDF2E9] text-[#D35400] flex items-center justify-center font-serif font-bold text-lg">
+                                5
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#1E2022]/80 italic font-light leading-relaxed">
+                            "Я ужасно боялась геометрии, в школе стояла тройка. За 4 месяца занятий восполнили все пробелы с 7 класса. Экзамен сдала на твердую пятерку!"
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-[#E5DFD5] text-xs text-[#1E2022]/60 flex items-center justify-between">
+                        <span>Занималась 5 месяцев</span>
+                        <span class="text-[#D35400] font-medium">Оценка «5» (29 баллов)</span>
+                    </div>
+                </div>
+
+                <div class="academic-card p-8 rounded-3xl space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-[#1E2022]">Илья К.</h3>
+                                <span class="text-xs text-[#1E2022]/60">ЕГЭ Профиль</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#E8F8F5] text-[#16A085] flex items-center justify-center font-serif font-bold text-lg">
+                                86
+                            </div>
+                        </div>
+                        <p class="text-sm text-[#1E2022]/80 italic font-light leading-relaxed">
+                            "Очень нравилось, что домашку проверяют подробно с объяснением каждой ошибки. Настоящий системный подход без воды."
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-[#E5DFD5] text-xs text-[#1E2022]/60 flex items-center justify-between">
+                        <span>Занимался 1 год</span>
+                        <span class="text-[#16A085] font-medium">НИУ ВШЭ</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Tariffs & Pricing Section -->
+    <section id="tariffs" class="py-24 bg-[#F3EFEA]/50 border-t border-b border-[#E5DFD5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Стоимость и форматы</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1E2022]">Выберите подходящий формат занятий</h2>
+                <p class="text-[#1E2022]/70 max-w-xl mx-auto text-sm sm:text-base">Прозрачные цены без скрытых доплат. Все материалы и записи уроков включены в стоимость.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Tariff 1 -->
+                <div class="academic-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#1E2022] text-xs font-medium">Индивидуально</span>
+                            <i class="fas fa-user text-[#D35400] text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">Один на один</h3>
+                        <p class="text-sm text-[#1E2022]/70">Максимальное внимание преподавателя, гибкий график и программа под личные цели ученика.</p>
+                        
+                        <ul class="space-y-3 text-sm text-[#1E2022]/80">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> 60 минут занятие</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Личный кабинет и трекер прогресса</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Проверка домашних заданий с разбором</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8 mt-8 border-t border-[#E5DFD5]">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-[#1E2022]/60">Стоимость за урок:</span>
+                            <span class="text-2xl font-serif font-bold text-[#1E2022]">2 200 ₽</span>
+                        </div>
+                        <a href="#contact" class="block w-full py-3 rounded-xl bg-[#FAF8F5] hover:bg-[#E5DFD5] text-center font-medium text-[#1E2022] border border-[#E5DFD5] transition-all text-sm">
+                            Выбрать формат
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tariff 2 (Featured) -->
+                <div class="academic-card p-8 rounded-3xl flex flex-col justify-between border-2 border-[#D35400] relative shadow-lg bg-white lg:-translate-y-2">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full terracotta-gradient text-white text-xs font-medium shadow-sm">
+                        Выбор большинства
+                    </div>
+
+                    <div class="space-y-6 pt-2">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-[#FDF2E9] text-[#D35400] text-xs font-medium">Мини-группа (3-4 чел)</span>
+                            <i class="fas fa-users text-[#D35400] text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">Командная подготовка</h3>
+                        <p class="text-sm text-[#1E2022]/70">Занятия в мини-группе сверстников с соревновательным эффектом и выгодной стоимостью.</p>
+                        
+                        <ul class="space-y-3 text-sm text-[#1E2022]/80">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> 2 раза в неделю по 90 минут</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Закрытый чат поддержки</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Ежемесячные пробные экзамены</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#D35400] text-xs"></i> Все материалы и конспекты бесплатно</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8 mt-8 border-t border-[#E5DFD5]">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-[#1E2022]/60">Стоимость за месяц:</span>
+                            <span class="text-2xl font-serif font-bold text-[#D35400]">6 900 ₽</span>
+                        </div>
+                        <a href="#contact" class="block w-full py-3.5 rounded-xl terracotta-gradient text-center font-medium text-white shadow-md transition-all text-sm">
+                            Занять место в группе
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tariff 3 -->
+                <div class="academic-card p-8 rounded-3xl flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#1E2022] text-xs font-medium">В парах</span>
+                            <i class="fas fa-user-friends text-[#16A085] text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022]">Занятия вдвоем (Парные)</h3>
+                        <p class="text-sm text-[#1E2022]/70">Идеально для друзей или одноклассников с похожим уровнем подготовки.</p>
+                        
+                        <ul class="space-y-3 text-sm text-[#1E2022]/80">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> 80 минут занятие</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> Внимательный разбор ошибок</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-[#16A085] text-xs"></i> Комфортный темп обучения</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-8 mt-8 border-t border-[#E5DFD5]">
+                        <div class="flex items-baseline justify-between mb-4">
+                            <span class="text-xs text-[#1E2022]/60">Стоимость за урок с человека:</span>
+                            <span class="text-2xl font-serif font-bold text-[#1E2022]">1 500 ₽</span>
+                        </div>
+                        <a href="#contact" class="block w-full py-3 rounded-xl bg-[#FAF8F5] hover:bg-[#E5DFD5] text-center font-medium text-[#1E2022] border border-[#E5DFD5] transition-all text-sm">
+                            Выбрать парный формат
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-[#FAF8F5]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <span class="px-3 py-1 rounded-full bg-[#F3EFEA] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Ответы на вопросы</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#1E2022]">Часто задаваемые вопросы родителей</h2>
+                <p class="text-[#1E2022]/70 max-w-xl mx-auto text-sm sm:text-base">Все, что важно знать перед началом занятий.</p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <div class="academic-card rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(0)" class="w-full p-6 text-left flex items-center justify-between font-serif font-semibold text-[#1E2022] focus:outline-none gap-4">
+                        <span>Как проходят онлайн-занятия и какое ПО нужно?</span>
+                        <i id="faqIcon0" class="fas fa-chevron-down text-[#D35400] transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div id="faqContent0" class="hidden px-6 pb-6 text-sm text-[#1E2022]/70 leading-relaxed border-t border-[#E5DFD5] pt-4">
+                        Мы занимаемся на интерактивной виртуальной доске с графическим планшетом. Для связи используется Zoom или Telegram. Ученик видит всё, что я пишу на доске в реальном времени, а после урока остается полная запись и конспект.
+                    </div>
+                </div>
+
+                <div class="academic-card rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left flex items-center justify-between font-serif font-semibold text-[#1E2022] focus:outline-none gap-4">
+                        <span>Что делать, если ребенок пропустил урок по болезни?</span>
+                        <i id="faqIcon1" class="fas fa-chevron-down text-[#D35400] transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div id="faqContent1" class="hidden px-6 pb-6 text-sm text-[#1E2022]/70 leading-relaxed border-t border-[#E5DFD5] pt-4">
+                        При индивидуальных занятиях урок переносится на другое удобное время, если вы предупредили минимум за 12 часов. В мини-группах ученик получает видеозапись прошедшего урока и консультацию по домашней работе.
+                    </div>
+                </div>
+
+                <div class="academic-card rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left flex items-center justify-between font-serif font-semibold text-[#1E2022] focus:outline-none gap-4">
+                        <span>Как вы отчитываетесь перед родителями о прогрессе?</span>
+                        <i id="faqIcon2" class="fas fa-chevron-down text-[#D35400] transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div id="faqContent2" class="hidden px-6 pb-6 text-sm text-[#1E2022]/70 leading-relaxed border-t border-[#E5DFD5] pt-4">
+                        Каждые 4 недели я отправляю родителям подробный отчет об успехах, посещаемости, результатах пробных тестов и зонах роста. Вы всегда будете в курсе реальной динамики подготовки.
+                    </div>
+                </div>
+
+                <div class="academic-card rounded-2xl overflow-hidden">
+                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left flex items-center justify-between font-serif font-semibold text-[#1E2022] focus:outline-none gap-4">
+                        <span>Как записаться на бесплатную диагностику?</span>
+                        <i id="faqIcon3" class="fas fa-chevron-down text-[#D35400] transition-transform flex-shrink-0"></i>
+                    </button>
+                    <div id="faqContent3" class="hidden px-6 pb-6 text-sm text-[#1E2022]/70 leading-relaxed border-t border-[#E5DFD5] pt-4">
+                        Заполните форму внизу страницы или напишите мне в Telegram/WhatsApp. Мы согласуем удобное время для 30-минутного созвона, определим текущий уровень знаний и составим предварительный план подготовки.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA & Contact Section -->
+    <section id="contact" class="py-24 bg-[#F3EFEA]/80 border-t border-[#E5DFD5] relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="academic-card p-8 sm:p-12 rounded-3xl shadow-2xl border border-[#E5DFD5] bg-white">
+                <div class="text-center space-y-4 mb-10">
+                    <span class="px-3 py-1 rounded-full bg-[#FAF8F5] border border-[#E5DFD5] text-[#D35400] text-xs font-medium">Бесплатная диагностика</span>
+                    <h2 class="text-2xl sm:text-4xl font-serif font-bold text-[#1E2022]">Запишитесь на пробный разбор уровня</h2>
+                    <p class="text-[#1E2022]/70 max-w-md mx-auto text-sm">Оставьте контактные данные, и я свяжусь с вами в выбранном мессенджере в течение 15 минут.</p>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-[#1E2022]/70 mb-2">ВАШЕ ИМЯ ИЛИ ИМЯ РОДИТЕЛЯ</label>
+                            <input type="text" id="userName" required placeholder="Например, Светлана" class="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#1E2022] focus:outline-none focus:border-[#D35400] text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-[#1E2022]/70 mb-2">НОМЕР ТЕЛЕФОНА ИЛИ TELEGRAM</label>
+                            <input type="text" id="userContact" required placeholder="+7 (999) 000-00-00" class="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#1E2022] focus:outline-none focus:border-[#D35400] text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-medium text-[#1E2022]/70 mb-2">ЦЕЛЬ ИЛИ КЛАСС УЧЕНИКА</label>
+                            <select id="userGoal" class="w-full px-4 py-3.5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] text-[#1E2022] focus:outline-none focus:border-[#D35400] text-sm">
+                                <option value="EGE">ЕГЭ Профильная математика (10-11 класс)</option>
+                                <option value="OGE">ОГЭ по математике (9 класс)</option>
+                                <option value="BASIS">Повышение успеваемости (7-8 класс)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-[#1E2022]/70 mb-2">УДОБНЫЙ МЕССЕНДЖЕР</label>
+                            <div class="grid grid-cols-2 gap-3 pt-1">
+                                <label class="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] cursor-pointer hover:border-[#D35400] text-sm">
+                                    <input type="radio" name="messenger" value="Telegram" checked class="accent-[#D35400]">
+                                    <span class="text-xs sm:text-sm"><i class="fab fa-telegram-plane text-[#D35400] mr-1"></i> Telegram</span>
+                                </label>
+                                <label class="flex items-center justify-center gap-2 p-3 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] cursor-pointer hover:border-[#D35400] text-sm">
+                                    <input type="radio" name="messenger" value="WhatsApp" class="accent-[#D35400]">
+                                    <span class="text-xs sm:text-sm"><i class="fab fa-whatsapp text-[#16A085] mr-1"></i> WhatsApp</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 rounded-2xl terracotta-gradient font-bold text-white shadow-lg shadow-orange-600/20 transition-all hover:scale-[1.01] active:scale-[0.99] text-base">
+                        Записаться на диагностику <i class="fas fa-paper-plane ml-2 text-xs"></i>
+                    </button>
+                </form>
+
+                <!-- Success Box -->
+                <div id="successModal" class="hidden text-center space-y-6 py-6">
+                    <div class="w-20 h-20 bg-[#E8F8F5] text-[#16A085] rounded-3xl mx-auto flex items-center justify-center text-4xl">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-[#1E2022] mb-2">Заявка успешно отправлена!</h3>
+                        <p class="text-[#1E2022]/70 max-w-md mx-auto text-sm">
+                            Спасибо! Елена Сергеевна свяжется с вами в течение 15 минут для согласования времени пробного созвона.
+                        </p>
+                    </div>
+                    <button onclick="resetForm()" class="px-8 py-3 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] text-sm font-medium text-[#1E2022] hover:bg-[#E5DFD5] transition-all">
+                        Отправить еще заявку
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-[#E5DFD5] bg-[#FAF8F5] text-sm text-[#1E2022]/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div class="flex items-center gap-3 justify-center">
+                <div class="w-8 h-8 rounded-lg terracotta-gradient flex items-center justify-center font-serif font-bold text-white text-sm flex-shrink-0">
+                    M
+                </div>
+                <span class="font-serif font-bold text-[#1E2022]">Елена Сергеевна · Математика</span>
+            </div>
+
+            <div class="flex items-center gap-6 text-[#1E2022]/80 flex-wrap justify-center">
+                <a href="#about" class="hover:text-[#D35400] transition-colors">Обо мне</a>
+                <a href="#directions" class="hover:text-[#D35400] transition-colors">Направления</a>
+                <a href="#tariffs" class="hover:text-[#D35400] transition-colors">Стоимость</a>
+                <a href="#faq" class="hover:text-[#D35400] transition-colors">FAQ</a>
+            </div>
+
+            <div class="text-xs text-[#1E2022]/50">
+                © 2026 Елена Сергеевна. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Math Quiz Logic
+        const quizLevels = {
+            easy: {
+                category: "Алгебра / Показательные уравнения",
+                question: "Найдите корень уравнения: 2^(3x - 1) = 32",
+                options: [
+                    { text: "A) x = 2", correct: true },
+                    { text: "B) x = 1", correct: false },
+                    { text: "C) x = 3", correct: false },
+                    { text: "D) x = 1.5", correct: false }
+                ]
+            },
+            medium: {
+                category: "ОГЭ / Квадратные уравнения",
+                question: "Чему равен дискриминант уравнения 3x² - 5x - 2 = 0?",
+                options: [
+                    { text: "A) 25", correct: false },
+                    { text: "B) 49", correct: true },
+                    { text: "C) 1", correct: false },
+                    { text: "D) -49", correct: false }
+                ]
+            },
+            hard: {
+                category: "ЕГЭ Профиль / Производная",
+                question: "Найдите точку минимума функции y = x³ - 3x + 5",
+                options: [
+                    { text: "A) x = 1", correct: false },
+                    { text: "B) x = -1", correct: true },
+                    { text: "C) x = 0", correct: false },
+                    { text: "D) x = 3", correct: false }
+                ]
+            }
+        };
+
+        let currentLevel = 'easy';
+
+        function setQuizLevel(level) {
+            currentLevel = level;
+            document.getElementById('btnEasy').className = level === 'easy' ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#D35400] text-white' : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#FAF8F5] text-[#1E2022] border border-[#E5DFD5]';
+            document.getElementById('btnMedium').className = level === 'medium' ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#D35400] text-white' : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#FAF8F5] text-[#1E2022] border border-[#E5DFD5]';
+            document.getElementById('btnHard').className = level === 'hard' ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#D35400] text-white' : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-[#FAF8F5] text-[#1E2022] border border-[#E5DFD5]';
+
+            loadQuiz();
+        }
+
+        function loadQuiz() {
+            const q = quizLevels[currentLevel];
+            document.getElementById('quizCategoryTag').innerText = q.category;
+            document.getElementById('quizQuestionText').innerText = q.question;
+            
+            const optContainer = document.getElementById('quizOptions');
+            optContainer.innerHTML = '';
+            
+            const feedbackEl = document.getElementById('quizFeedback');
+            feedbackEl.classList.add('hidden');
+            feedbackEl.innerText = '';
+
+            q.options.forEach((opt, idx) => {
+                optContainer.innerHTML += `
+                    <button onclick="checkQuizAnswer(${opt.correct}, this)" class="p-4 rounded-xl bg-[#FAF8F5] border border-[#E5DFD5] hover:border-[#D35400] font-medium text-[#1E2022] text-sm text-left transition-all">
+                        ${opt.text}
+                    </button>
+                `;
+            });
+        }
+
+        function checkQuizAnswer(isCorrect, btnElement) {
+            const feedbackEl = document.getElementById('quizFeedback');
+            feedbackEl.classList.remove('hidden');
+
+            // Reset other buttons
+            const buttons = document.getElementById('quizOptions').querySelectorAll('button');
+            buttons.forEach(b => {
+                b.classList.remove('bg-emerald-100', 'border-emerald-500', 'bg-rose-100', 'border-rose-500');
+            });
+
+            if (isCorrect) {
+                btnElement.classList.add('bg-emerald-100', 'border-emerald-500');
+                feedbackEl.className = "p-4 rounded-xl text-center text-sm font-medium bg-emerald-100 text-emerald-800 border border-emerald-300";
+                feedbackEl.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Верно! Отличный результат, у вас хорошая база.';
+            } else {
+                btnElement.classList.add('bg-rose-100', 'border-rose-500');
+                feedbackEl.className = "p-4 rounded-xl text-center text-sm font-medium bg-rose-100 text-rose-800 border border-rose-300";
+                feedbackEl.innerHTML = '<i class="fas fa-times-circle mr-2"></i> Не совсем так. На занятиях мы подробно разбираем алгоритмы решения подобных задач.';
+            }
+        }
+
+        function resetQuiz() {
+            loadQuiz();
+        }
+
+        loadQuiz();
+
+        // FAQ Toggle
+        function toggleFaq(index) {
+            const content = document.getElementById(`faqContent${index}`);
+            const icon = document.getElementById(`faqIcon${index}`);
+            if (content && icon) {
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            }
+        }
+
+        // Form submission simulation
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contactForm');
+            const modal = document.getElementById('successModal');
+            if (form) form.classList.add('hidden');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function resetForm() {
+            const form = document.getElementById('contactForm');
+            const modal = document.getElementById('successModal');
+            if (form) {
+                form.reset();
+                form.classList.remove('hidden');
+            }
+            if (modal) modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>

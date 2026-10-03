@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Портфолио веб-дизайнера — лендинги и сайты-визитки</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%E2%98%81%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Портфолио веб-дизайнера — лендинги и сайты-визитки">
+<meta property="og:description" content="Три пакета: Стандарт, Кастом и Бизнес. Живые примеры работ прямо на сайте.">
+<meta property="og:type" content="website">
+<meta name="description" content="Создаю лендинги и сайты-визитки под ключ: от аккуратного стандарта до креативных авторских решений.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&family=Oswald:wght@700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0);--ink:#1b1b3a;--p:#7b6bff}
+*,*:before,*:after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{font-family:Manrope,system-ui,sans-serif;color:#fff;overflow:hidden;background:linear-gradient(180deg,#1f5bf0 0%,#4f82f4 38%,#b59be6 70%,#f6b7c9 100%)}
+a{color:inherit;text-decoration:none}
+.sky{position:fixed;inset:0;overflow:hidden}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff;animation:tw 3s infinite ease-in-out}
+@keyframes tw{50%{opacity:.2;transform:scale(.6)}}
+.cl{position:absolute;border-radius:50%;background:radial-gradient(closest-side,#fff3ea,#ffd9cc 60%,transparent);filter:blur(4px);opacity:.9}
+/* hero text */
+.hero{position:fixed;top:calc(26px + env(safe-area-inset-top,0));left:0;right:0;text-align:center;z-index:5;padding:0 20px}
+.hero i{font:italic 500 clamp(20px,3vw,30px) 'Playfair Display';display:block}
+.hero h1{font:700 clamp(54px,9vw,104px)/1 'Playfair Display';margin:0 0 10px;letter-spacing:-.02em;text-shadow:0 6px 30px #1f3fd266}
+.hero p{margin:0 auto;max-width:430px;font-size:clamp(13px,1.6vw,16px);opacity:.92}
+/* marquee */
+.mq{position:fixed;left:0;right:0;top:47%;z-index:2;overflow:hidden;white-space:nowrap;pointer-events:none}
+.mq div{display:inline-block;font:700 clamp(110px,22vw,260px)/1 Oswald,'Arial Narrow',Impact,sans-serif;color:#ffffff55;animation:mq 40s linear infinite;letter-spacing:.01em}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* scene */
+.scw{position:fixed;left:50%;bottom:0;width:620px;height:380px;margin-left:-310px;z-index:4;transform-origin:50% 100%;transform:scale(var(--s,1))}
+.scene{position:absolute;inset:0;transition:transform .15s;transform-style:preserve-3d}
+.deco{position:absolute;inset:0;pointer-events:none}
+.mug{translate:calc(var(--px,0)*-8px) calc(var(--py,0)*-4px);transition:translate .25s ease-out}
+.ball{translate:calc(var(--px,0)*10px) calc(var(--py,0)*-5px);transition:translate .25s ease-out}
+.deco,.deco *{pointer-events:none!important}
+.scr{z-index:3}
+.ped{position:absolute;left:30px;right:30px;bottom:-30px;height:130px;border-radius:26px 26px 0 0;background:linear-gradient(180deg,#f5f0ff,#cfc6f5);box-shadow:inset 0 6px 0 #fff,0 -10px 40px #7b6bff44}
+.beam{position:absolute;left:35px;width:340px;top:262px;height:90px;filter:blur(4px);animation:bm 4s ease-in-out infinite alternate}
+.beam i,.beam b{position:absolute;inset:0}
+.beam i{clip-path:polygon(3.7% 0,96.3% 0,72.2% 100%,27.8% 100%);background:linear-gradient(0deg,#e4fcffee 0%,#7fe9ff99 45%,#7fe9ff2e 100%)}
+.beam b{clip-path:polygon(25% 0,75% 0,66% 100%,34% 100%);background:linear-gradient(0deg,#ffffffd0 0%,#bff6ff55 60%,transparent 100%)}
+.glow,.glow2{position:absolute;pointer-events:none;border-radius:50%;background:radial-gradient(closest-side,#c4f8ffee,#7ff4ff55 55%,transparent);filter:blur(6px);animation:bm 3.2s ease-in-out infinite alternate}
+.glow{left:200px;width:220px;top:250px;height:44px}.glow2{left:90px;width:440px;top:300px;height:60px;opacity:.55}
+@keyframes bm{from{opacity:.78}to{opacity:1}}
+@keyframes bs{to{background-position:0 -9px}}
+.dev{position:absolute;left:190px;width:240px;height:70px;bottom:62px;border-radius:30px;background:linear-gradient(180deg,#a99bff,#6657e0);box-shadow:inset 0 5px 0 #ffffff66,0 14px 24px #3a2fa055}
+.dev:before{content:"";position:absolute;left:34px;top:30px;width:110px;height:10px;border-radius:99px;background:#7ff4ff;box-shadow:0 0 14px #7ff4ff}
+.dev:after{content:"";position:absolute;right:30px;top:20px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffc09a,#ee7d4f)}
+/* glass screen */
+.scr{position:absolute;left:150px;width:320px;top:8px;height:196px;border-radius:16px;background:linear-gradient(135deg,#ffffff66,#ffffff2a);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1.5px solid #ffffffaa;box-shadow:0 20px 50px #2a3fc844,0 26px 40px -14px #7ff4ffaa;padding:10px;display:grid;grid-template-columns:30px 1fr;gap:8px}
+.scr .cb{position:absolute;width:14px;height:14px;border-radius:4px;background:linear-gradient(#a99bff,#6657e0);border:1px solid #fff9}
+.cb.a{left:-7px;top:-7px}.cb.b{right:-7px;top:-7px}.cb.c{left:-7px;bottom:-7px}.cb.d{right:-7px;bottom:-7px}
+.side{display:grid;gap:6px;align-content:start;padding-top:6px}.side span{height:22px;border-radius:7px;background:#fff;opacity:.85;display:grid;place-items:center;font-size:12px}
+.card{background:#fff;color:var(--ink);border-radius:10px;padding:12px;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:thin;scrollbar-color:#c9c0f5 transparent}
+.pn{display:none;animation:fi .4s}.pn.on{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}}
+.pn h3{margin:0 0 6px;font:700 17px/1.15 Manrope}.pn p{margin:0 0 8px;font-size:11.5px;line-height:1.4;color:#4a4a6a}
+.pn .b{display:inline-block;background:var(--p);color:#fff;border-radius:99px;padding:6px 12px;font-size:11px;font-weight:700;border:0;cursor:pointer}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 9px;border-radius:8px;background:#f1eefc;margin-bottom:5px;font-size:11.5px;font-weight:500;transition:.2s}
+.row:hover{background:#e3defa;transform:translateX(3px)}.row b{color:var(--p);font-size:10.5px;white-space:nowrap}
+/* mug & ball */
+.mug{position:absolute;left:46px;bottom:68px;width:64px;height:62px;border-radius:14px 14px 20px 20px;background:linear-gradient(180deg,#ff8d7a,#e9604c);box-shadow:inset 0 5px 0 #ffffff55,0 10px 20px #8a2f2255}
+.mug:after{content:"";position:absolute;right:-22px;top:12px;width:26px;height:30px;border:7px solid #e9604c;border-left:0;border-radius:0 18px 18px 0}
+.eye{position:absolute;top:16px;width:18px;height:20px;border-radius:50%;background:#fff;overflow:hidden}.eye.l{left:10px}.eye.r{left:34px}
+.eye i{position:absolute;left:5px;top:6px;width:9px;height:10px;border-radius:50%;background:#2a1c2e;transition:transform .08s}
+.mug u{position:absolute;left:24px;top:42px;width:16px;height:8px;border-bottom:3px solid #7a2a22;border-radius:0 0 16px 16px}
+.ball{position:absolute;right:42px;bottom:70px;width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#d8ffe9,#4fd39a 45%,#1f9a6c);box-shadow:0 12px 22px #1c6b4d55;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+/* nav */
+.nav{position:fixed;left:calc(24px + env(safe-area-inset-left,0));bottom:calc(30px + env(safe-area-inset-bottom,0));z-index:9;display:grid;gap:4px;padding:10px;min-width:200px;border-radius:26px;background:rgba(255,255,255,.3);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);border:1px solid rgba(255,255,255,.65);box-shadow:0 18px 40px #3a2fa033,inset 0 1px 0 #fff9}
+.nav button[data-go]{display:flex;align-items:center;gap:12px;background:none;border:0;color:var(--ink);font:600 14px Manrope,sans-serif;padding:8px 16px 8px 8px;border-radius:16px;cursor:pointer;text-align:left;transition:.25s}
+.nav button[data-go] i{font-style:normal;width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:#ffffff99;font-size:15px;transition:.25s}
+.nav button[data-go]:hover{background:#ffffff66;transform:translateX(4px)}
+.nav button[data-go].on{background:#fff;box-shadow:0 8px 20px #5a4ad940;transform:none}
+.nav button[data-go].on i{background:linear-gradient(135deg,#a99bff,#6657e0);box-shadow:0 4px 12px #6657e066}
+.tg{display:flex;align-items:center;gap:10px;margin-top:6px;padding:12px 8px 4px;border-top:1px solid #ffffff99;font:600 12px/1.2 Manrope,sans-serif;cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;color:var(--ink);text-align:left}
+.sw{width:42px;height:24px;border-radius:99px;background:#7b6bff;position:relative;flex:0 0 auto;transition:.25s}.sw:after{content:"";position:absolute;top:3px;left:21px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.25s}
+.tg.off .sw{background:#ffffffaa}.tg.off .sw:after{left:3px}
+.cta{position:fixed;right:calc(26px + env(safe-area-inset-right,0));bottom:calc(36px + env(safe-area-inset-bottom,0));z-index:9;background:#fff;color:var(--ink);padding:14px 24px;border-radius:99px;font-weight:700;font-size:14px;box-shadow:0 10px 30px #1f3fd244;transition:.2s}
+.cta:hover{transform:translateY(-3px)}
+@media(max-width:820px){
+ .nav{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0));display:flex;gap:2px;padding:6px;min-width:0;border-radius:24px}
+ .nav button[data-go]{flex:1;flex-direction:column;gap:3px;padding:8px 2px 7px;font-size:11px;justify-content:center;text-align:center;border-radius:18px}
+ .nav button[data-go]:hover{transform:none}
+ .nav button[data-go] i{width:28px;height:28px}
+ .tg{display:none}.cta{display:none}
+ .scw{bottom:88px;width:380px;height:470px;margin-left:-190px}.mq{top:42%}
+ .ped{left:8px;right:8px}
+ .scr{left:20px;width:340px;top:18px;height:256px;padding:12px;grid-template-columns:34px 1fr}
+ .side span{height:26px;font-size:14px}
+ .beam{left:35px;width:340px;top:262px;height:90px}
+ .glow{left:95px;width:220px;top:330px;height:44px}.glow2{left:30px;width:320px;top:395px;height:60px}
+ .dev{left:105px;width:200px;height:66px}
+ .dev:before{left:24px;width:80px;top:28px}.dev:after{right:22px}
+ .mug{left:14px}.ball{right:16px}
+ .card{padding:14px}
+ .pn h3{font-size:20px;margin-bottom:8px}.pn p{font-size:13.5px;line-height:1.45}.pn .b{padding:9px 16px;font-size:13px}
+ .row{font-size:13.5px;padding:9px 11px}.row b{font-size:12px}
+}
+/* viewer */
+button.row{width:100%;border:0;font:inherit;font-size:11.5px;font-weight:500;color:inherit;cursor:pointer;text-align:left}
+button.row span:after{content:" ▸";color:var(--p)}
+#p-works .row{padding:6px 9px;margin-bottom:4px}
+.fade{position:sticky;bottom:-14px;height:26px;margin:0 -14px -14px;background:linear-gradient(rgba(255,255,255,0),#fff 85%);pointer-events:none}
+.grp{font:700 10px Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--p);margin:10px 0 5px}.grp:first-of-type{margin-top:4px}
+.vw{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;padding:calc(12px + env(safe-area-inset-top,0)) 14px calc(14px + env(safe-area-inset-bottom,0));background:rgba(22,18,60,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:fi .3s}
+.vw.on{display:flex}
+.vb{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.vt{display:flex;align-items:center;gap:10px;min-width:0}
+.vt b{font:700 18px 'Playfair Display',serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vt span{background:#fff;color:var(--ink);border-radius:99px;padding:4px 12px;font-size:12px;font-weight:700;white-space:nowrap}
+.vc{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vc button,.vc a{background:#ffffff26;color:#fff;border:1px solid #ffffff44;border-radius:99px;padding:9px 16px;font:600 13px Manrope,sans-serif;cursor:pointer;transition:.2s}
+.vc button:hover,.vc a:hover{background:#ffffff44}
+.vc button.on{background:#fff;color:var(--ink)}
+.vc .x{width:40px;height:40px;padding:0;font-size:16px;background:#fff;color:var(--ink)}
+.vs{flex:1;min-height:0;display:flex;justify-content:center}
+.vf{width:100%;height:100%;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px #0008;transition:width .35s,border-radius .35s}
+.vf.m{width:390px;max-width:100%;border-radius:38px;border:10px solid #15132f}
+.vf iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+@media(max-width:820px){.vw{padding:calc(8px + env(safe-area-inset-top,0)) 0 0}.vb{padding:0 12px;margin-bottom:8px}.vc .dv{display:none}.vf{border-radius:18px 18px 0 0}.vf.m{width:100%;border:0;border-radius:18px 18px 0 0}.vt b{font-size:16px;max-width:46vw}}
+@media(min-width:821px){
+ .scw{width:860px;height:540px;margin-left:-430px}
+ .ped{left:40px;right:40px;height:160px}
+ .beam{left:160px;width:540px;top:296px;height:100px}
+ .glow{left:290px;width:280px;top:372px;height:50px}
+ .glow2{left:200px;width:460px;top:432px;height:70px}
+ .dev{left:300px;width:260px;height:78px;bottom:76px}
+ .dev:before{left:40px;top:33px;width:120px}.dev:after{right:34px;top:22px;width:32px;height:32px}
+ .scr{left:150px;width:560px;top:4px;height:306px;padding:14px;grid-template-columns:40px 1fr;gap:12px}
+ .side span{height:30px;font-size:16px}
+ .card{padding:18px}
+ .fade{bottom:-18px;margin:0 -18px -18px}
+ .pn h3{font-size:26px;margin-bottom:8px}.pn p{font-size:15px}.pn .b{padding:10px 20px;font-size:14px}
+ .row,button.row{font-size:14px;padding:10px 13px;margin-bottom:6px}.row b{font-size:12.5px}
+ #p-works .row{padding:8px 13px;margin-bottom:5px}
+ .grp{font-size:11px}
+ .mug{left:70px;bottom:84px;transform:scale(1.3);transform-origin:left bottom}
+ .ball{right:72px;bottom:86px;width:80px;height:80px}
+}
+@media(max-height:620px){.hero{top:calc(12px + env(safe-area-inset-top,0))}.hero i{font-size:17px}.hero h1{font-size:clamp(38px,7vw,62px);margin-bottom:6px}.hero p{font-size:12.5px;max-width:400px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"></div>
+
+<div class="hero"><i>Привет, я</i><h1>Твоё Имя</h1><p>Веб-дизайнер. Делаю лендинги и сайты-визитки, которые привлекают клиентов и запоминаются.</p></div>
+
+<div class="mq"><div>ЛЕНДИНГИ · ВИЗИТКИ · UI/UX · ВЁРСТКА · ЛЕНДИНГИ · ВИЗИТКИ · UI/UX · ВЁРСТКА · ЛЕНДИНГИ · ВИЗИТКИ · UI/UX · ВЁРСТКА · </div></div>
+
+<div class="scw" id="scw"><div class="scene" id="scene"><div class="deco" id="deco">
+ <div class="ped"></div>
+ <div class="beam"><i></i><b></b></div><div class="glow"></div><div class="glow2"></div><div class="dev"></div>
+ <div class="mug"><div class="eye l"><i></i></div><div class="eye r"><i></i></div><u></u></div>
+ <div class="ball"></div></div>
+ <div class="scr">
+  <span class="cb a"></span><span class="cb b"></span><span class="cb c"></span><span class="cb d"></span>
+  <div class="side"><span>🏠</span><span>🖼</span><span>👤</span><span>💎</span><span>✉️</span></div>
+  <div class="card">
+   <div class="pn on" id="p-home"><h3>Привет, гость! 👋</h3><p>Здесь собраны мои работы и пакеты услуг. Выбери раздел в меню слева или нажми кнопку.</p><button class="b" data-go="works">Смотреть работы</button></div>
+   <div class="pn" id="p-works"><h3>Работы</h3><p style="margin:0 0 2px;font-size:11px">9 проектов · нажми, чтобы открыть · листай вниз ↓</p>
+    <div class="grp">Бизнес и услуги</div>
+    <button class="row" data-open="0"><span>Стройка «Каркас»</span><b>Стандарт</b></button>
+    <button class="row" data-open="1"><span>Кофейня Ember</span><b>Бизнес</b></button>
+    <button class="row" data-open="2"><span>NORD · Исландия</span><b>Кастом</b></button>
+    <div class="grp">Актёр · три концепта</div>
+    <button class="row" data-open="3"><span>Суфлёрский экземпляр</span><b>Кастом</b></button>
+    <button class="row" data-open="4"><span>Контактный лист</span><b>Кастом</b></button>
+    <button class="row" data-open="5"><span>Сайт меняется с ролями</span><b>Кастом</b></button>
+    <div class="grp">Репетитор</div>
+    <button class="row" data-open="6"><span>Александр · ОГЭ и ЕГЭ</span><b>Репетитор</b></button>
+    <button class="row" data-open="7"><span>Елена Сергеевна · математика</span><b>Репетитор</b></button>
+    <div class="grp">Эксперимент</div>
+    <button class="row" data-open="8"><span>CYBER-PULSE</span><b>Неон</b></button>
+    <div class="fade"></div>
+  </div>
+   <div class="pn" id="p-about"><h3>Обо мне</h3><p>Создаю сайты, на которые приятно смотреть и с которых удобно заказывать. Работаю напрямую, без посредников, всегда на связи и сдаю в срок.</p><p style="margin:0"><b>3</b> пакета · <b>5–14</b> дней · правки включены</p></div>
+   <div class="pn" id="p-plans"><h3>Пакеты</h3>
+    <div class="row"><span>Стандарт · визитка / лендинг</span><b>12 000 ₽</b></div>
+    <div class="row"><span>Кастом · креатив и анимации</span><b>20 000 ₽</b></div>
+    <div class="row"><span>Бизнес · сайт под продажи</span><b>25 000 ₽</b></div></div>
+   <div class="pn" id="p-contact"><h3>Контакты</h3><p>Опиши задачу, и я отвечу в течение часа.</p>
+    <a class="row" href="https://t.me/Arashi_Ryu" target="_blank" rel="noopener"><span>Telegram</span><b>@Arashi_Ryu</b></a>
+    <a class="row" href="tel:+79278223360"><span>MAX</span><b>+7 927 822-33-60</b></a>
+    <a class="row" href="https://kwork.ru/user/nnetrix" target="_blank" rel="noopener"><span>Kwork</span><b>nnetrix</b></a></div>
+  </div>
+ </div>
+ 
+</div></div>
+
+<nav class="nav" id="nav">
+ <button class="on" data-go="home"><i>🏠</i><span>Главная</span></button>
+ <button data-go="works"><i>🖼</i><span>Работы</span></button>
+ <button data-go="about"><i>👤</i><span>Обо мне</span></button>
+ <button data-go="plans"><i>💎</i><span>Пакеты</span></button>
+ <button data-go="contact"><i>✉️</i><span>Контакты</span></button>
+ <button class="tg" id="tg"><span class="sw"></span><span>Interactive<br>Mode</span></button>
+</nav>
+<a class="cta" href="#" onclick="go('contact');return false">Обсудить проект</a>
+
+<div class="vw" id="vw" role="dialog" aria-modal="true" aria-labelledby="vtitle">
+ <div class="vb">
+  <div class="vt"><b id="vtitle"></b><span id="vtag"></span><em id="vcount" style="font:600 12px Manrope,sans-serif;font-style:normal;opacity:.75;white-space:nowrap"></em></div>
+  <div class="vc">
+   <button id="vprev" aria-label="Предыдущая работа">←</button><button id="vnext" aria-label="Следующая работа">→</button>
+   <button class="dv on" data-dev="d">🖥 Десктоп</button><button class="dv" data-dev="m">📱 Телефон</button>
+   <a id="vopen" href="#" target="_blank" rel="noopener">Отдельно ↗</a>
+   <button class="x" id="vclose" aria-label="Закрыть">✕</button>
+  </div>
+ </div>
+ <div class="vs"><div class="vf" id="vf"><iframe id="vfr" title="Демо работы"></iframe></div></div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+/* sky: stars + clouds */
+const sky=$('#sky');
+for(let i=0;i<22;i++){const s=document.createElement('i');s.className='star';s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*45}%;animation-delay:${Math.random()*3}s;transform:scale(${.5+Math.random()})`;sky.appendChild(s)}
+[[-4,52,38,16],[62,40,34,14],[24,60,30,12],[78,62,36,15],[46,66,28,10]].forEach(c=>{const d=document.createElement('div');d.className='cl';d.style.cssText=`left:${c[0]}%;top:${c[1]}%;width:${c[2]}vw;height:${c[3]}vw`;sky.appendChild(d)});
+/* scale scene */
+function fit(){const m=innerWidth<=820,bw=m?380:860,bh=m?470:540,sw=$('#scw'),off=parseFloat(getComputedStyle(sw).bottom)||0,hb=document.querySelector('.hero').getBoundingClientRect().bottom,aw=m?innerWidth*.98:Math.max(innerWidth-472,innerWidth*.62),ah=innerHeight-off-hb-12;sw.style.setProperty('--s',Math.max(.3,Math.min(1,aw/bw,ah/bh)))}
+addEventListener('resize',fit);fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+/* panels */
+function go(n){$$('.pn').forEach(p=>p.classList.toggle('on',p.id==='p-'+n));$$('#nav button[data-go]').forEach(b=>b.classList.toggle('on',b.dataset.go===n))}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)go(b.dataset.go)});
+/* interactive mode */
+let inter=true;const tg=$('#tg'),sc=$('#scene'),pup=$$('.eye i');
+tg.onclick=()=>{inter=!inter;tg.classList.toggle('off',!inter);if(!inter){sc.style.setProperty('--px',0);sc.style.setProperty('--py',0);pup.forEach(p=>p.style.transform='')}};
+addEventListener('pointermove',e=>{if(!inter)return;
+ const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+ sc.style.setProperty('--px',x*2);sc.style.setProperty('--py',y*2);
+ pup.forEach(p=>{const r=p.parentElement.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy)||1,k=Math.min(3,d/40);p.style.transform=`translate(${dx/d*k}px,${dy/d*k}px)`})});
+
+/* viewer */
+const WORKS=[{t:'Стройка «Каркас»',g:'Стандарт',u:'demo-standard-stroyka.html'},{t:'Кофейня Ember',g:'Бизнес',u:'demo-business-coffee.html'},{t:'NORD · Исландия',g:'Кастом',u:'demo-custom-nord.html'},{t:'Актёр · Суфлёрский экземпляр',g:'Кастом',u:'demo-actor-1.html'},{t:'Актёр · Контактный лист',g:'Кастом',u:'demo-actor-2.html'},{t:'Актёр · Сайт меняется с ролями',g:'Кастом',u:'demo-actor-3.html'},{t:'Репетитор · Александр',g:'Репетитор',u:'demo-tutor-1.html'},{t:'Репетитор · Елена Сергеевна',g:'Репетитор',u:'demo-tutor-2.html'},{t:'CYBER-PULSE',g:'Неон',u:'demo-cyber.html'}];
+let wi=0;const vw=$('#vw'),vfr=$('#vfr'),vf=$('#vf');
+function show(i){wi=(i+WORKS.length)%WORKS.length;const w=WORKS[wi];$('#vtitle').textContent=w.t;$('#vtag').textContent=w.g;$('#vcount').textContent=(wi+1)+' / '+WORKS.length;$('#vopen').href=w.u;vfr.title='Демо: '+w.t;vfr.src=w.u}
+function openW(i){show(i);vw.classList.add('on');$('#vclose').focus()}
+function closeW(){vw.classList.remove('on');vfr.src='about:blank'}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o)openW(+o.dataset.open);
+ const d=e.target.closest('[data-dev]');if(d){vf.classList.toggle('m',d.dataset.dev==='m');$$('[data-dev]').forEach(b=>b.classList.toggle('on',b===d))}});
+$('#vclose').onclick=closeW;$('#vprev').onclick=()=>show(wi-1);$('#vnext').onclick=()=>show(wi+1);
+addEventListener('keydown',e=>{if(!vw.classList.contains('on'))return;if(e.key==='Escape')closeW();if(e.key==='ArrowLeft')show(wi-1);if(e.key==='ArrowRight')show(wi+1)});
+</script>
+</body>
+</html>

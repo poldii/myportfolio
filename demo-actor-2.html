@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Матвей Ларин — контактный лист</title>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;900&family=Spline+Sans+Mono&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--table:#e9eef1;--ink:#14181a;--soft:#5b676d;--strip:#1a1915;--edge:#d98e2b;--grease:#e4381e;--ph:#c9cac3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--table:#0f1418;--ink:#e6ecef;--soft:#8c99a0;--strip:#050505;--ph:#2a2e30}}
+:root[data-theme="dark"]{--table:#0f1418;--ink:#e6ecef;--soft:#8c99a0;--strip:#050505;--ph:#2a2e30}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--table);color:var(--ink);font:300 17px/1.65 'Geologica',system-ui,sans-serif}
+.page{max-width:1120px;margin:0 auto;padding:0 20px 64px}
+.mono,.edge,dl,.log{font-family:'Spline Sans Mono','Courier New',monospace}
+.top{display:flex;justify-content:space-between;padding-top:26px;font:12px 'Spline Sans Mono',monospace;color:var(--soft)}
+h1{font:900 clamp(56px,14vw,168px)/.86 'Geologica',sans-serif;letter-spacing:-.05em;margin:56px 0 18px}
+.note{font:600 clamp(24px,3.6vw,34px)/1.1 'Caveat',cursive;color:var(--grease);transform:rotate(-2deg);margin:0 0 56px;max-width:640px}
+.stage{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:start}
+.view{position:sticky;top:20px}
+.fr{position:relative;background:var(--strip);padding:22px 8px 24px}
+.fr::before,.fr::after{content:"";position:absolute;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,var(--table) 0 9px,transparent 9px 20px);background-position:6px 0}
+.fr::before{top:7px}.fr::after{bottom:7px}
+.edge{display:block;font-size:10px;line-height:12px;height:12px;margin-top:4px;color:var(--edge);letter-spacing:.14em;overflow:hidden;white-space:nowrap}
+.ph{display:block;position:relative;width:100%;aspect-ratio:4/5;border:0;padding:0;background:var(--ph);cursor:pointer;overflow:hidden;color:var(--soft);font:inherit}
+.ph:focus-visible{outline:3px solid var(--grease);outline-offset:-3px}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph .n{position:absolute;left:8px;top:5px;font:12px 'Spline Sans Mono',monospace}
+.ph.empty::after{content:"+";position:absolute;inset:0;display:grid;place-items:center;font:300 44px 'Geologica';opacity:.5}
+.sheet{display:grid;grid-template-columns:repeat(3,1fr);row-gap:26px}
+.sheet .fr.sel{z-index:2}
+.mark{position:absolute;left:-7%;top:-5%;width:114%;height:110%;pointer-events:none;overflow:visible}
+.mark path{fill:none;stroke:var(--grease);stroke-width:3.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;vector-effect:non-scaling-stroke}
+.fr.sel .mark path{opacity:1;animation:draw .7s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.fr.over .ph{outline:3px dashed var(--grease);outline-offset:-3px}
+.hand{font:600 clamp(28px,3.4vw,38px)/1.1 'Caveat',cursive;color:var(--grease);margin:16px 0 8px;transform:rotate(-1.5deg)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0 0 14px;font-size:13px}
+dt{color:var(--soft)}dd{margin:0}
+.btn{font:13px 'Spline Sans Mono',monospace;color:var(--ink);background:none;border:1px solid var(--ink);padding:8px 12px;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:var(--ink);color:var(--table);outline:none}
+.tip{font:12px/1.5 'Spline Sans Mono',monospace;color:var(--soft);margin:10px 0 0}
+section{padding-top:84px}
+h2{font:900 clamp(24px,4vw,36px)/1.1 'Geologica',sans-serif;letter-spacing:-.03em;margin:0 0 22px}
+.log{display:block}
+.log button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:70px 1.2fr 1.6fr 60px;gap:8px 16px;padding:14px 0;border-bottom:1px solid color-mix(in srgb,var(--ink) 25%,transparent);font-size:14px}
+.log button:hover{color:var(--grease)}.log button:focus-visible{outline:2px solid var(--grease)}
+.log b{font-weight:400;color:var(--soft)}
+p.lead{max-width:580px;margin:0 0 14px}
+.facts{margin-top:22px}
+.contact a{display:block;font:900 clamp(20px,4.4vw,44px)/1.2 'Geologica',sans-serif;letter-spacing:-.03em;color:var(--ink);text-decoration:none;width:fit-content;max-width:100%;overflow-wrap:anywhere;border-bottom:4px solid var(--grease);margin:12px 0}
+.contact a:hover,.contact a:focus-visible{color:var(--grease);outline:none}
+footer{padding-top:64px;font:12px 'Spline Sans Mono',monospace;color:var(--soft)}
+@media(max-width:820px){.stage{grid-template-columns:1fr}.view{position:static;max-width:360px}.sheet{grid-template-columns:repeat(2,1fr)}.log button{grid-template-columns:50px 1fr 50px}.log button i{display:none}}
+@media(prefers-reduced-motion:reduce){.fr.sel .mark path{animation:none;stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top"><span>Контактный лист № 3</span><span>12 кадров · Ларин 400TX</span></div>
+  <h1>Матвей<br>Ларин</h1>
+  <p class="note">актёр. выберите кадр, я его обведу</p>
+
+  <div class="stage">
+    <div class="view" id="view">
+      <div class="fr"><button class="ph empty" id="bigph" aria-label="Выбранный кадр"></button><span class="edge" id="bigedge"></span></div>
+      <p class="hand" id="cap"></p>
+      <dl><dt>Роль</dt><dd id="v-role"></dd><dt>Спектакль</dt><dd id="v-play"></dd><dt>Год</dt><dd id="v-year"></dd><dt>Фото</dt><dd id="v-by">имя фотографа</dd></dl>
+      <button class="btn" id="pick">Вставить фото в кадр</button>
+      <p class="tip">Демо: фото можно выбрать или перетащить прямо на кадр. В готовом сайте они будут вшиты.</p>
+    </div>
+    <div class="sheet" id="sheet"></div>
+  </div>
+
+  <section>
+    <h2>Журнал кадров</h2>
+    <div class="log" id="log"></div>
+  </section>
+
+  <section>
+    <h2>За рамкой</h2>
+    <p class="lead">Мне тридцать четыре. ГИТИС, семь лет в репертуарном театре, три года на независимых площадках. Люблю паузы длиннее, чем принято, и залы, где видно лица зрителей.</p>
+    <dl class="facts"><dt>Рост</dt><dd>181 см</dd><dt>Голос</dt><dd>баритон, поёт, но предупреждает заранее</dd><dt>Языки</dt><dd>русский, английский, немецкий (сцена)</dd><dt>Навыки</dt><dd>гитара, сценический бой, вождение</dd><dt>Города</dt><dd>Москва, готов к гастролям</dd></dl>
+  </section>
+
+  <section class="contact">
+    <h2>Позвать на пробы</h2>
+    <a href="mailto:matvey@example.com">matvey@example.com</a>
+    <a href="tel:+70000000000">+7 000 000 00 00</a>
+    <a href="#">Telegram: @larin_na_stsene</a>
+  </section>
+  <footer>Отпечатано с плёнки. Негативы хранятся.</footer>
+</div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<script>
+(function(){
+var F=[
+ {c:'Тригорин, записывает',r:'Тригорин',p:'«Чайка»',y:'2023'},
+ {c:'Крупно, без реакции',r:'Портрет',p:'—',y:'—'},
+ {c:'Тёплый, с улыбкой',r:'Портрет',p:'—',y:'—'},
+ {c:'Лопахин, торопится',r:'Лопахин',p:'«Вишнёвый сад»',y:'2021'},
+ {c:'В полный рост',r:'Портрет',p:'—',y:'—'},
+ {c:'Профиль',r:'Портрет',p:'—',y:'—'},
+ {c:'Тот, что с чемоданом',r:'Человек с чемоданом',p:'«Перрон»',y:'2022'},
+ {c:'Репетиция, без грима',r:'Закулисье',p:'—',y:'—'},
+ {c:'Смеётся по-настоящему',r:'Портрет',p:'—',y:'—'},
+ {c:'Эдгар, один из трёх',r:'Эдгар',p:'«Король Лир»',y:'2019'},
+ {c:'Взгляд в сторону',r:'Портрет',p:'—',y:'—'},
+ {c:'Обычный вторник',r:'Без роли',p:'—',y:'—'}
+];
+var cur=0,sheet=document.getElementById('sheet'),file=document.getElementById('file'),els=[];
+var PATH='M14 22 C42 -4 94 6 91 62 C88 120 18 128 8 78 C3 50 22 14 72 5';
+function pad(n){return n<10?'0'+n:''+n}
+function fill(btn,i){
+  btn.innerHTML='<span class="n">'+pad(i+1)+'</span>';btn.classList.toggle('empty',!F[i].s);
+  if(F[i].s){var im=new Image();im.src=F[i].s;im.alt=F[i].c;btn.appendChild(im)}
+}
+F.forEach(function(f,i){
+  var d=document.createElement('div');d.className='fr';
+  d.innerHTML='<button class="ph" aria-label="Кадр '+(i+1)+': '+f.c+'"></button><span class="edge">▸ '+(i+1)+' · '+pad(i+1)+'A · 400TX</span><svg class="mark" viewBox="0 0 100 130" preserveAspectRatio="none" aria-hidden="true"><path d="'+PATH+'" pathLength="1"/></svg>';
+  var b=d.firstChild;fill(b,i);b.onclick=function(){select(i,true)};
+  d.ondragover=function(e){e.preventDefault();d.classList.add('over')};
+  d.ondragleave=function(){d.classList.remove('over')};
+  d.ondrop=function(e){e.preventDefault();d.classList.remove('over');var fl=e.dataTransfer.files[0];if(fl)load(fl,i)};
+  sheet.appendChild(d);els.push({d:d,b:b});
+});
+function select(i,scroll){
+  cur=i;
+  els.forEach(function(e,k){e.d.classList.remove('sel');if(k===i){void e.d.offsetWidth;e.d.classList.add('sel')}});
+  var f=F[i],bp=document.getElementById('bigph');
+  fill(bp,i);bp.onclick=function(){file.click()};
+  document.getElementById('bigedge').textContent='▸ '+(i+1)+' · '+pad(i+1)+'A · ЛАРИН 400TX';
+  document.getElementById('cap').textContent=f.c;
+  document.getElementById('v-role').textContent=f.r;document.getElementById('v-play').textContent=f.p;document.getElementById('v-year').textContent=f.y;
+  document.getElementById('pick').textContent=f.s?'Заменить фото':'Вставить фото в кадр '+pad(i+1);
+  if(scroll&&matchMedia('(max-width:820px)').matches)document.getElementById('view').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function load(fl,i){
+  if(!fl||fl.type.indexOf('image')!==0)return;
+  var r=new FileReader();r.onload=function(){F[i].s=r.result;fill(els[i].b,i);select(i,false)};r.readAsDataURL(fl);
+}
+document.getElementById('pick').onclick=function(){file.click()};
+file.onchange=function(){load(file.files[0],cur);file.value=''};
+document.addEventListener('keydown',function(e){
+  if(e.target.tagName==='INPUT')return;
+  if(e.key==='ArrowRight')select((cur+1)%F.length,false);
+  if(e.key==='ArrowLeft')select((cur+F.length-1)%F.length,false);
+});
+var log=document.getElementById('log');
+F.forEach(function(f,i){
+  if(f.p==='—'&&f.r!=='Закулисье')return;if(f.p==='—')return;
+  var b=document.createElement('button');
+  b.innerHTML='<b>кадр '+pad(i+1)+'</b><span>'+f.r+'</span><i style="font-style:normal">'+f.p+'</i><span>'+f.y+'</span>';
+  b.onclick=function(){select(i,true);window.scrollTo({top:0,behavior:'smooth'})};log.appendChild(b);
+});
+select(0,false);
+})();
+</script>
+</body>
+</html>

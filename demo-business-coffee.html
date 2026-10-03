@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ember Coffee — кофейня и обжарка в Москве | Доставка кофе и десертов</title>
+<meta name="description" content="Свежеобжаренный кофе, авторские десерты и доставка за 40 минут. Закажите онлайн или забронируйте столик в Ember Coffee.">
+<link rel="canonical" href="https://example.com/">
+<meta property="og:type" content="website"><meta property="og:title" content="Ember Coffee — кофе, который согревает"><meta property="og:description" content="Своя обжарка, десерты и доставка за 40 минут."><meta property="og:image" content="https://example.com/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Ember Coffee","telephone":"+7-495-000-00-00","servesCuisine":"Coffee","priceRange":"₽₽","address":{"@type":"PostalAddress","streetAddress":"ул. Пример, 12","addressLocality":"Москва"},"openingHours":"Mo-Su 08:00-22:00"}</script>
+<!-- Яндекс.Метрика: вставьте счётчик заказчика (ID заменить в YM_ID ниже) -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf5ec;--esp:#2a1810;--car:#c8742b;--sand:#f1e4d0;--moss:#5b6b4a;--mut:#7a6858;box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--esp);font-family:Manrope,system-ui,sans-serif;line-height:1.55}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;line-height:1.08}
+.w{max-width:1120px;margin:0 auto;padding:0 22px}
+section{padding:80px 0}
+h2{font-size:clamp(28px,4.2vw,46px);margin-bottom:34px}
+.lb{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--car);display:block;margin-bottom:10px}
+.btn{display:inline-block;background:var(--car);color:#fff;border:0;border-radius:99px;padding:15px 30px;font:800 15px Manrope;cursor:pointer;transition:.2s;box-shadow:0 10px 24px #c8742b44}
+.btn:hover{transform:translateY(-3px);background:#b3641f}
+.btn.o{background:transparent;color:inherit;border:2px solid currentColor;box-shadow:none}
+.btn.sm{padding:10px 18px;font-size:13px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0);z-index:30;background:#fbf5ecee;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #2a18101a}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
+.logo{font:800 24px 'Playfair Display';letter-spacing:-.02em}.logo i{color:var(--car)}
+header nav{display:flex;gap:22px;font-weight:600;font-size:14px}
+header nav a:hover{color:var(--car)}
+/* hero */
+.hero{background:var(--esp);color:#fbf5ec;padding:70px 0 90px;overflow:hidden;position:relative}
+.hero .w{display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,78px);margin-bottom:22px}
+.hero h1 em{color:#f0a45f;font-style:italic}
+.hero p{font-size:18px;color:#d8c8b6;max-width:470px;margin:0 0 30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.cupw{display:grid;place-items:center}
+.steam path{stroke:#f0a45f;stroke-width:5;fill:none;stroke-linecap:round;opacity:0;animation:st 3s infinite}
+.steam path:nth-child(2){animation-delay:.8s}.steam path:nth-child(3){animation-delay:1.6s}
+@keyframes st{0%{opacity:0;transform:translateY(14px)}50%{opacity:.8}100%{opacity:0;transform:translateY(-18px)}}
+/* adv */
+.g{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.adv .c{background:#fff;border-radius:22px;padding:26px;box-shadow:0 8px 24px #2a18100d}
+.adv .c b{font:800 34px 'Playfair Display';color:var(--car);display:block}
+.adv .c h3{font-size:19px;margin:6px 0}.adv .c p{margin:0;color:var(--mut);font-size:15px}
+/* menu */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{padding:10px 20px;border-radius:99px;border:2px solid var(--esp);background:transparent;font:700 14px Manrope;cursor:pointer;color:var(--esp)}
+.tab.on{background:var(--esp);color:#fff}
+.mg{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.it{background:#fff;border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:6px;box-shadow:0 6px 18px #2a18100d}
+.it .e{font-size:34px}.it h3{font-size:18px}.it small{color:var(--mut)}
+.it .r{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
+.it .r b{font-size:18px}
+/* promo */
+.promo{background:var(--car);color:#fff;border-radius:32px;margin:0 22px;padding:48px 0}
+.promo .w{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.promo h2{margin:0 0 8px;font-size:clamp(26px,4vw,40px)}
+.tm{display:flex;gap:10px}.tm div{background:#ffffff26;border-radius:14px;padding:12px 16px;text-align:center;min-width:68px}
+.tm b{font:800 28px 'Playfair Display';display:block}.tm span{font-size:11px;opacity:.85}
+/* about */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.ab p{color:var(--mut);font-size:17px;margin:0 0 20px}
+.nm{display:flex;gap:30px;flex-wrap:wrap}.nm b{font:800 34px 'Playfair Display';display:block;color:var(--moss)}.nm span{font-size:13px;color:var(--mut)}
+.ph{aspect-ratio:1;border-radius:200px 200px 24px 24px;background:var(--img) center/cover,linear-gradient(160deg,#c8742b,#5b6b4a)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px}
+.gal div{border-radius:20px;display:flex;align-items:end;padding:14px;color:#fff;font-weight:700;font-size:13px;transition:.3s;background:linear-gradient(transparent 50%,#000b),var(--img) center/cover,var(--fb)}
+.gal div:hover{transform:scale(1.03)}
+.gal div:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal div:nth-child(2),.gal div:nth-child(3){grid-column:span 2}
+/* plans */
+.pl{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.pl .p{background:#fff;border-radius:24px;padding:30px;border:2px solid transparent;display:flex;flex-direction:column;gap:10px}
+.pl .p.hot{border-color:var(--car);position:relative}
+.pl .p.hot:before{content:"Популярный";position:absolute;top:-13px;left:24px;background:var(--car);color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:99px}
+.pl h3{font-size:22px}.pl .pr{font:800 30px 'Playfair Display'}.pl .pr small{font:600 14px Manrope;color:var(--mut)}
+.pl ul{list-style:none;margin:0 0 10px;padding:0;color:var(--mut);font-size:15px;display:grid;gap:6px}
+.pl li:before{content:"✓ ";color:var(--moss);font-weight:800}
+.pl .btn{margin-top:auto;text-align:center}
+/* reviews */
+.rv{background:var(--sand);padding:36px;border-radius:24px}
+.rv .q{font:600 italic clamp(20px,3vw,28px) 'Playfair Display';margin:0 0 18px;min-height:110px}
+.rv .a{font-weight:800;font-size:14px}.rv .a small{color:var(--mut);font-weight:600}
+.dots{display:flex;gap:8px;margin-top:18px}.dots button{width:12px;height:12px;border-radius:50%;border:0;background:#2a181033;cursor:pointer;padding:0}.dots button.on{background:var(--car);width:30px;border-radius:99px}
+/* faq */
+details{background:#fff;border-radius:16px;padding:18px 22px;margin-bottom:10px}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary:after{content:"+";color:var(--car);font-size:22px;line-height:1}details[open] summary:after{content:"−"}
+details p{margin:12px 0 0;color:var(--mut)}
+/* book */
+.bk{background:var(--esp);color:#fbf5ec;border-radius:32px;margin:0 22px;padding:56px 0}
+.bk .in{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.bk p{color:#d8c8b6;margin:0 0 20px;font-size:17px}
+.bk h2{margin-bottom:14px}
+form.f{background:#fff;color:var(--esp);border-radius:22px;padding:26px;display:grid;gap:12px}
+input,select{width:100%;padding:14px 15px;border:2px solid #ead9c2;border-radius:12px;font:16px Manrope;background:#fff;color:var(--esp)}
+input:focus,select:focus{outline:0;border-color:var(--car)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ok{display:none;background:#fff;color:var(--esp);border-radius:22px;padding:36px;text-align:center}.ok b{font:800 24px 'Playfair Display';color:var(--car);display:block;margin-bottom:6px}
+/* contacts */
+.ct{display:grid;grid-template-columns:1fr 1.2fr;gap:30px}
+.ct .i p{margin:0 0 16px}.ct .i small{color:var(--mut);display:block}
+.map{border-radius:24px;min-height:280px;background:repeating-linear-gradient(45deg,#e9dcc6,#e9dcc6 20px,#f1e4d0 20px,#f1e4d0 40px);display:grid;place-items:center;font-weight:800;position:relative}
+.map:after{content:"📍";position:absolute;font-size:44px;top:42%}
+footer{background:var(--esp);color:#a8957f;text-align:center;padding:26px 0;font-size:14px}
+/* floating */
+.fl{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0));display:grid;gap:10px;z-index:40}
+.fl a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:0 8px 20px #0004}
+.tg{background:#229ed9}.wa{background:#25d366}.vk{background:#0077ff}
+.soc{display:flex;gap:10px;margin-top:6px}.soc a{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;transition:.2s}.soc a:hover{transform:translateY(-3px)}
+.cart{position:fixed;left:50%;transform:translateX(-50%) translateY(120px);bottom:calc(16px + env(safe-area-inset-bottom,0));z-index:40;background:var(--car);color:#fff;border:0;border-radius:99px;padding:15px 26px;font:800 15px Manrope;box-shadow:0 12px 30px #0005;transition:.3s;cursor:pointer}
+.cart.on{transform:translateX(-50%) translateY(0)}
+/* modal */
+.md{position:fixed;inset:0;background:#000a;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}
+.md.on{display:flex}
+.md .bx{background:#fff;border-radius:24px;padding:26px;width:100%;max-width:440px;max-height:90vh;overflow:auto;display:grid;gap:12px}
+.md h3{font-size:24px}.ln{display:flex;justify-content:space-between;font-size:15px;gap:10px}
+.tot{font-weight:800;font-size:18px;border-top:2px solid var(--sand);padding-top:12px}
+/* demo panel */
+.dp{position:fixed;left:12px;bottom:12px;z-index:50;font:12px Manrope}
+.dp button{background:#000c;color:#fff;border:0;border-radius:10px;padding:8px 12px;font:700 12px Manrope;cursor:pointer}
+.dp div{display:none;background:#000d;color:#9fe8b0;border-radius:10px;padding:10px;margin-bottom:6px;min-width:190px;max-height:140px;overflow:auto}
+.dp.on div{display:block}
+@media(max-width:820px){header nav{display:none}.hero .w,.ab,.bk .in,.ct{grid-template-columns:1fr}.cupw{order:-1}.cupw svg{width:220px}.gal{grid-template-columns:repeat(2,1fr)}.gal div:nth-child(n){grid-column:auto;grid-row:auto}.gal div:nth-child(1){grid-column:span 2}section{padding:56px 0}.promo,.bk{margin:0 12px}.dp{bottom:84px}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="w">
+  <a class="logo" href="#top">Ember<i>.</i></a>
+  <nav><a href="#menu">Меню</a><a href="#sub">Подписка</a><a href="#about">О нас</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
+  <a class="btn sm" href="#book" data-goal="header_book">Забронировать</a>
+ </div>
+</header>
+
+<!-- 1 HERO -->
+<section class="hero" id="top">
+ <div class="w">
+  <div>
+   <h1>Кофе, который <em>согревает</em> по-настоящему</h1>
+   <p>Своя обжарка, авторские десерты и доставка за 40 минут. Первый заказ с кодом EMBER со скидкой 15%.</p>
+   <div class="cta"><a class="btn" href="#menu" data-goal="hero_menu">Выбрать кофе</a><a class="btn o" href="#book" data-goal="hero_book">Забронировать столик</a></div>
+  </div>
+  <div class="cupw">
+   <svg width="340" viewBox="0 0 340 300" fill="none" role="img" aria-label="Чашка кофе">
+    <g class="steam"><path d="M130 70c-14-20 14-30 0-52"/><path d="M170 70c-14-20 14-30 0-52"/><path d="M210 70c-14-20 14-30 0-52"/></g>
+    <ellipse cx="170" cy="272" rx="140" ry="18" fill="#00000050"/>
+    <path d="M70 100h200v70c0 52-40 92-100 92S70 222 70 170z" fill="#f5e9d8"/>
+    <path d="M270 120h24c24 0 24 56 0 56h-28" stroke="#f5e9d8" stroke-width="16" stroke-linecap="round"/>
+    <ellipse cx="170" cy="100" rx="100" ry="16" fill="#8a4a1c"/><ellipse cx="170" cy="100" rx="78" ry="9" fill="#c8742b"/>
+    <path d="M150 200q20-30 40 0" stroke="#c8742b" stroke-width="7" stroke-linecap="round"/>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<!-- 2 ADVANTAGES -->
+<section class="adv"><div class="w">
+ <span class="lb">Почему Ember</span><h2>Всё, за что нас любят</h2>
+ <div class="g">
+  <div class="c"><b>48 ч</b><h3>Свежая обжарка</h3><p>Зерно уходит к вам не позже чем через двое суток после обжарки.</p></div>
+  <div class="c"><b>40 мин</b><h3>Доставка</h3><p>Привозим горячий кофе и десерты по центру города.</p></div>
+  <div class="c"><b>100%</b><h3>Своя выпечка</h3><p>Десерты готовим каждое утро, без заморозки и полуфабрикатов.</p></div>
+  <div class="c"><b>4.9★</b><h3>Рейтинг гостей</h3><p>Более 2 400 отзывов на картах и в соцсетях.</p></div>
+ </div>
+</div></section>
+
+<!-- 3 MENU -->
+<section id="menu"><div class="w">
+ <span class="lb">Меню и заказ</span><h2>Выберите и закажите онлайн</h2>
+ <div class="tabs" id="tabs"></div>
+ <div class="mg" id="mg"></div>
+</div></section>
+
+<!-- 4 PROMO -->
+<div class="promo"><div class="w">
+ <div><h2>Кофе-пауза дня: -20% на десерты</h2><p style="margin:0">Акция действует до конца дня при заказе от двух позиций.</p></div>
+ <div class="tm" id="tm"><div><b id="th">00</b><span>часов</span></div><div><b id="tmn">00</b><span>минут</span></div><div><b id="ts">00</b><span>секунд</span></div></div>
+</div></div>
+
+<!-- 5 ABOUT -->
+<section id="about"><div class="w ab">
+ <div><span class="lb">О нас</span><h2>Маленькая обжарка с большим характером</h2>
+ <p>Мы начинали с одной кофемашины и мечты о честном кофе. Сегодня сами выбираем зерно у фермеров, обжариваем малыми партиями и готовим каждый день как для друзей.</p>
+ <div class="nm"><div><b>7 лет</b><span>на рынке</span></div><div><b>12</b><span>сортов зерна</span></div><div><b>3</b><span>точки в городе</span></div></div></div>
+ <div class="ph" role="img" aria-label="Интерьер Ember Coffee" style="--img:url(bar.jpg)"></div>
+</div></section>
+
+<!-- 6 GALLERY -->
+<section style="padding-top:0"><div class="w">
+ <span class="lb">Атмосфера</span><h2>Загляните к нам</h2>
+ <div class="gal"><div style="--img:url(hall.jpg);--fb:#8a4a1c">Уютный зал</div><div style="--img:url(barista.jpg);--fb:#5b6b4a">Бариста за работой</div><div style="--img:url(machine.jpg);--fb:#c8742b">Наша кофемашина</div></div>
+</div></section>
+
+<!-- 7 SUBSCRIPTION -->
+<section id="sub" style="background:var(--sand)"><div class="w">
+ <span class="lb">Подписка на кофе</span><h2>Свежее зерно каждый месяц</h2>
+ <div class="pl">
+  <div class="p"><h3>Старт</h3><div class="pr">1 190 ₽ <small>/ мес</small></div><ul><li>1 пачка 250 г</li><li>Доставка бесплатно</li><li>Пауза в любой момент</li></ul><a class="btn o" href="#book" data-plan="Подписка: Старт">Выбрать</a></div>
+  <div class="p hot"><h3>Любитель</h3><div class="pr">2 190 ₽ <small>/ мес</small></div><ul><li>2 пачки по 250 г</li><li>Новые сорта каждый месяц</li><li>Скидка 10% на десерты</li></ul><a class="btn" href="#book" data-plan="Подписка: Любитель">Выбрать</a></div>
+  <div class="p"><h3>Офис</h3><div class="pr">5 900 ₽ <small>/ мес</small></div><ul><li>2 кг зерна</li><li>Обслуживание кофемашины</li><li>Закрывающие документы</li></ul><a class="btn o" href="#book" data-plan="Подписка: Офис">Выбрать</a></div>
+ </div>
+</div></section>
+
+<!-- 8 REVIEWS -->
+<section><div class="w">
+ <span class="lb">Отзывы</span><h2>Что говорят гости</h2>
+ <div class="rv"><p class="q" id="rq"></p><div class="a" id="ra"></div><div class="dots" id="dots"></div></div>
+</div></section>
+
+<!-- 9 FAQ -->
+<section id="faq" style="padding-top:0"><div class="w" style="max-width:820px">
+ <span class="lb">Вопросы</span><h2>Частые вопросы</h2>
+ <details><summary>Как быстро привезёте заказ?</summary><p>В среднем за 40 минут в пределах центра. Точное время увидите при оформлении.</p></details>
+ <details><summary>Можно ли оплатить картой курьеру?</summary><p>Да, принимаем карты и СБП. Онлайн-оплата тоже доступна.</p></details>
+ <details><summary>Как отменить подписку?</summary><p>Подписку можно поставить на паузу или отменить в любой момент одним сообщением в мессенджер.</p></details>
+ <details><summary>Есть ли растительное молоко?</summary><p>Да: овсяное, миндальное и кокосовое без доплаты.</p></details>
+</div></section>
+
+<!-- 10 BOOKING FORM -->
+<div class="bk" id="book"><div class="w in">
+ <div><h2>Забронируйте столик или оформите подписку</h2><p>Оставьте контакты, и мы подтвердим бронь в течение 10 минут. Или напишите нам в мессенджер.</p><a class="btn" href="#book" data-goal="tg_click">Написать в Telegram</a></div>
+ <form class="f" id="bf">
+  <input name="n" placeholder="Ваше имя" required>
+  <input name="t" type="tel" placeholder="Телефон" required>
+  <div class="row2"><input type="date" aria-label="Дата"><select aria-label="Гостей"><option>2 гостя</option><option>3–4 гостя</option><option>5–8 гостей</option></select></div>
+  <select id="topic" aria-label="Тема"><option>Бронь столика</option><option>Подписка: Старт</option><option>Подписка: Любитель</option><option>Подписка: Офис</option><option>Банкет / мероприятие</option></select>
+  <button class="btn" type="submit">Отправить заявку</button>
+ </form>
+ <div class="ok" id="bok"><b>Спасибо!</b>Мы перезвоним в течение 10 минут.</div>
+</div></div>
+
+<!-- 11 CONTACTS -->
+<section id="contacts"><div class="w ct">
+ <div class="i"><span class="lb">Контакты</span><h2 style="font-size:34px">Ждём вас</h2>
+  <p><b>Адрес</b><small>Москва, ул. Пример, 12</small></p>
+  <p><b>Часы работы</b><small>Ежедневно 08:00–22:00</small></p>
+  <p><b>Телефон</b><small><a href="tel:+74950000000">+7 (495) 000-00-00</a></small></p>
+  <div class="soc"><a class="tg" href="#book" data-goal="tg_contacts" aria-label="Telegram"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.8.3-.8 1.4 0 1.7l4.7 1.6 1.8 5.6c.2.6 1 .8 1.4.3l2.6-2.6 4.8 3.5c.6.4 1.3.1 1.5-.6L22.9 4.8c.2-.9-.6-1.6-1.4-1.3zM9 13.5l9.5-6-7.3 7.3-.3 3.3z"/></svg></a><a class="wa" href="#book" data-goal="wa_contacts" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path fill="#fff" stroke="none" d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg></a><a class="vk" href="#book" data-goal="vk_contacts" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><text x="12" y="16.5" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="11" fill="#fff">VK</text></svg></a></div></div>
+ <div class="map" role="img" aria-label="Карта">Здесь будет карта Яндекса</div>
+</div></section>
+
+<footer>© 2026 Ember Coffee · Политика конфиденциальности<br><small>Фото: Unsplash (Unsplash License)</small></footer>
+
+<!-- floating messengers + cart + modal + demo panel -->
+<div class="fl"><a class="tg" href="#book" data-goal="tg_float" aria-label="Telegram"><svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-.8.3-.8 1.4 0 1.7l4.7 1.6 1.8 5.6c.2.6 1 .8 1.4.3l2.6-2.6 4.8 3.5c.6.4 1.3.1 1.5-.6L22.9 4.8c.2-.9-.6-1.6-1.4-1.3zM9 13.5l9.5-6-7.3 7.3-.3 3.3z"/></svg></a><a class="wa" href="#book" data-goal="wa_float" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path fill="#fff" stroke="none" d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg></a></div>
+<button class="cart" id="cart"></button>
+<div class="md" id="md"><div class="bx" id="bx"></div></div>
+<div class="dp" id="dp"><div id="dl">Цели Метрики появятся здесь</div><button id="dbtn">📊 Демо: события Метрики</button></div>
+
+<script>
+const YM_ID=00000000; // ID счётчика заказчика
+const log=[];
+function goal(n){log.unshift(n);document.getElementById('dl').innerHTML=log.slice(0,8).map(x=>'✓ '+x).join('<br>');if(window.ym)ym(YM_ID,'reachGoal',n)}
+document.getElementById('dbtn').onclick=()=>document.getElementById('dp').classList.toggle('on');
+document.querySelectorAll('[data-goal]').forEach(a=>a.addEventListener('click',()=>goal(a.dataset.goal)));
+document.querySelectorAll('[data-plan]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('topic').value=a.dataset.plan;goal('plan_select')}));
+
+/* menu */
+const M={'Кофе':[['☕','Эспрессо','Классика, 30 мл',150],['☕','Капучино','Нежная молочная пенка',230],['☕','Флэт уайт','Двойной ристретто',260],['🌸','Раф лавандовый','Сливки и лаванда',310],['🧊','Колд брю','Холодная экстракция',280]],
+'Десерты':[['🥐','Круассан миндальный','Свежий, с кремом',220],['🍰','Чизкейк','Нью-йоркский',290],['🍫','Брауни','С морской солью',210],['🥞','Сырники','Со сметаной и ягодами',270]],
+'Зерно':[['🫘','Эфиопия, 250 г','Ягоды и цитрус',890],['🫘','Бразилия, 250 г','Орех и шоколад',790],['🫘','Эспрессо-бленд, 1 кг','Для дома и офиса',2600]]};
+let cat='Кофе';const cartQ={};
+function rm(){document.getElementById('tabs').innerHTML=Object.keys(M).map(k=>`<button class="tab ${k==cat?'on':''}" data-c="${k}">${k}</button>`).join('');
+ document.getElementById('mg').innerHTML=M[cat].map((i,x)=>`<div class="it"><span class="e">${i[0]}</span><h3>${i[1]}</h3><small>${i[2]}</small><div class="r"><b>${i[3]} ₽</b><button class="btn sm" data-a="${cat}|${x}">В корзину</button></div></div>`).join('')}
+document.addEventListener('click',e=>{
+ const t=e.target.closest('[data-c]');if(t){cat=t.dataset.c;rm();goal('menu_tab')}
+ const a=e.target.closest('[data-a]');if(a){const[c,x]=a.dataset.a.split('|');const it=M[c][x];cartQ[it[1]]=cartQ[it[1]]||{p:it[3],q:0};cartQ[it[1]].q++;uc();goal('add_to_cart')}
+});
+function uc(){let n=0,s=0;for(const k in cartQ){n+=cartQ[k].q;s+=cartQ[k].q*cartQ[k].p}const b=document.getElementById('cart');b.classList.toggle('on',n>0);b.textContent=`🛒 Корзина · ${n} · ${s} ₽`;return s}
+document.getElementById('cart').onclick=()=>{goal('open_cart');const s=uc();document.getElementById('bx').innerHTML=`<h3>Ваш заказ</h3>`+Object.entries(cartQ).filter(([k,v])=>v.q).map(([k,v])=>`<div class="ln"><span>${k} × ${v.q}</span><b>${v.q*v.p} ₽</b></div>`).join('')+`<div class="ln tot"><span>Итого</span><span>${s} ₽</span></div><form class="f" id="of" style="padding:0"><input placeholder="Имя" required><input type="tel" placeholder="Телефон" required><input placeholder="Адрес доставки" required><button class="btn" type="submit">Оформить заказ</button></form>`;
+ document.getElementById('md').classList.add('on');
+ document.getElementById('of').onsubmit=e=>{e.preventDefault();goal('order_submit');document.getElementById('bx').innerHTML='<h3>Заказ принят!</h3><p>Курьер свяжется с вами в ближайшие минуты. Спасибо!</p><button class="btn" id="cl">Закрыть</button>';for(const k in cartQ)delete cartQ[k];uc();document.getElementById('cl').onclick=()=>document.getElementById('md').classList.remove('on')}};
+document.getElementById('md').onclick=e=>{if(e.target.id=='md')e.target.classList.remove('on')};
+rm();
+
+/* timer */
+function tick(){const n=new Date(),e=new Date(n);e.setHours(23,59,59,0);let d=Math.max(0,e-n)/1000|0;const p=v=>String(v).padStart(2,'0');th.textContent=p(d/3600|0);tmn.textContent=p(d%3600/60|0);ts.textContent=p(d%60)}
+tick();setInterval(tick,1000);
+
+/* reviews */
+const RV=[['Лучший флэт уайт в районе, а доставка приехала даже быстрее обещанного.','Анна М.','гость с 2022'],['Подписка на зерно — находка. Каждый месяц новый вкус, всё свежее.','Дмитрий К.','подписчик'],['Заказывали десерты в офис на праздник, все были в восторге.','Ольга Р.','корпоративный клиент']];
+let ri=0;function rr(){rq.textContent='«'+RV[ri][0]+'»';ra.innerHTML=`${RV[ri][1]} <small>· ${RV[ri][2]}</small>`;dots.innerHTML=RV.map((_,i)=>`<button class="${i==ri?'on':''}" data-r="${i}" aria-label="Отзыв ${i+1}"></button>`).join('')}
+dots.onclick=e=>{const b=e.target.closest('[data-r]');if(b){ri=+b.dataset.r;rr()}};rr();setInterval(()=>{ri=(ri+1)%RV.length;rr()},6000);
+
+/* booking */
+document.getElementById('bf').onsubmit=e=>{e.preventDefault();goal('booking_submit');e.target.style.display='none';bok.style.display='block'};
+</script>
+</body>
+</html>

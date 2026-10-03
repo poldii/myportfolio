@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Матвей Ларин — актёр</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;800&family=PT+Mono&family=Literata:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#e3e7f0;--ink:#151f6b;--soft:#4b55a0;--tape:#f0337f;--line:#b7bfda;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0e1238;--ink:#e2e8ff;--soft:#8c99e0;--tape:#ff5c9b;--line:#2a3278}}
+:root[data-theme="dark"]{--paper:#0e1238;--ink:#e2e8ff;--soft:#8c99e0;--tape:#ff5c9b;--line:#2a3278}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 'Literata',Georgia,serif}
+.mono{font-family:'PT Mono','Courier New',monospace}
+.page{max-width:980px;margin:0 auto;padding:0 20px}
+section{display:grid;grid-template-columns:130px 1fr;gap:28px;padding:72px 0;border-top:1px dashed var(--line)}
+.cue{font:13px/1.4 'PT Mono',monospace;color:var(--tape);position:sticky;top:20px;align-self:start}
+.cue b{display:block;border-left:4px solid var(--tape);padding-left:10px}
+.dir{font:15px/1.6 'PT Mono',monospace;color:var(--soft)}
+.dir::before{content:"("}.dir::after{content:")"}
+h2{font:800 clamp(24px,4vw,38px)/1.1 'Unbounded',sans-serif;margin:0 0 28px}
+/* hero */
+.hero{display:block;min-height:92vh;padding-top:56px;border:0;position:relative}
+.top{display:flex;justify-content:space-between;font:13px 'PT Mono',monospace;color:var(--soft)}
+.top button{font:inherit;color:inherit;background:none;border:1px solid var(--line);padding:3px 10px;cursor:pointer;border-radius:2px}
+.name{font:800 clamp(52px,14vw,150px)/.92 'Unbounded',sans-serif;margin:60px 0 36px;letter-spacing:-.04em}
+.name span{display:block}
+.name span:last-child{color:transparent;-webkit-text-stroke:2px var(--ink);padding-left:.9em}
+.mark{position:absolute;right:20px;top:130px;width:64px;height:64px;color:var(--tape)}
+.mark::before,.mark::after{content:"";position:absolute;background:currentColor;left:50%;top:0;width:6px;height:100%;transform:translateX(-50%) rotate(45deg)}
+.mark::after{transform:translateX(-50%) rotate(-45deg)}
+#typed{min-height:3.2em;max-width:520px}
+.beat{display:flex;align-items:center;gap:16px;margin-top:22px;min-height:64px}
+.ring{width:52px;height:52px;border-radius:50%;border:3px solid var(--tape);display:grid;place-items:center;font:20px 'PT Mono',monospace;color:var(--tape);transition:opacity .4s}
+.line{font:italic 26px/1.3 'Literata',serif;opacity:0;transform:translateY(8px);transition:opacity .6s,transform .6s}
+.line.on{opacity:1;transform:none}
+.again{margin-top:12px;font:13px 'PT Mono',monospace;background:none;border:0;color:var(--soft);text-decoration:underline;cursor:pointer;padding:0}
+/* roles */
+.role{border-bottom:1px solid var(--line)}
+.role button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:18px 0}
+.role button:focus-visible{outline:2px solid var(--tape);outline-offset:2px}
+.role .who{font:800 clamp(20px,3.4vw,30px)/1.15 'Unbounded',sans-serif}
+.role .meta{font:13px 'PT Mono',monospace;color:var(--soft);text-align:right;align-self:center}
+.role .play{grid-column:1/-1;font:14px 'PT Mono',monospace;color:var(--soft)}
+.role .more{max-height:0;overflow:hidden;transition:max-height .45s ease;margin:0}
+.role.open .more{max-height:200px}
+.role .more p{margin:0 0 20px;max-width:560px;border-left:4px solid var(--tape);padding-left:14px}
+.role .who::before{content:"+";display:inline-block;width:1.1em;color:var(--tape);transition:transform .3s}
+.role.open .who::before{transform:rotate(45deg)}
+/* voice */
+.reg{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.reg button{font:14px 'PT Mono',monospace;color:var(--ink);background:none;border:1px solid var(--ink);padding:6px 14px;border-radius:2px;cursor:pointer}
+.reg button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.reg button:focus-visible{outline:2px solid var(--tape);outline-offset:2px}
+#sample{font:300 28px/1.3 'Unbounded',sans-serif;transition:all .5s cubic-bezier(.2,.8,.2,1);min-height:3em}
+/* about + contact */
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:28px 0 0;font:15px/1.5 'PT Mono',monospace}
+.facts dt{color:var(--soft)}.facts dd{margin:0}
+p.lead{max-width:600px;margin:0 0 16px}
+.contact a{display:block;font:800 clamp(20px,4.6vw,42px)/1.2 'Unbounded',sans-serif;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--tape);width:fit-content;max-width:100%;overflow-wrap:anywhere;margin:12px 0}
+.contact a:hover,.contact a:focus-visible{color:var(--tape)}
+footer{padding:36px 0 56px;border-top:1px dashed var(--line);font:13px 'PT Mono',monospace;color:var(--soft)}
+@media(max-width:700px){section{grid-template-columns:1fr;gap:14px;padding:52px 0}.cue{position:static}.mark{width:40px;height:40px;top:150px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<section class="hero">
+  <div class="top"><span>Суфлёрский экземпляр. Страница 1</span><button id="theme" aria-label="Сменить тему">свет: день / ночь</button></div>
+  <div class="mark" aria-hidden="true"></div>
+  <h1 class="name"><span>Матвей</span><span>Ларин</span></h1>
+  <p class="dir" id="typed" aria-live="polite"></p>
+  <div class="beat"><div class="ring" id="ring" aria-hidden="true">4</div><div class="line" id="hello">Здравствуйте. Я подумал — вы пришли послушать.</div></div>
+  <button class="again" id="again">Повторить выход</button>
+</section>
+
+<section>
+  <div class="cue"><b>Свет 2<br>Роли</b></div>
+  <div>
+    <h2>Роли, которые остались в теле</h2>
+    <div class="role"><button aria-expanded="false"><span class="who">Тригорин</span><span class="meta">2023–н.в.</span><span class="play">«Чайка», Городской драматический театр</span></button><div class="more"><p>Писатель, который записывает чужую боль в блокнот, пока она ещё тёплая. Играл его без пафоса: человек просто не может перестать смотреть.</p></div></div>
+    <div class="role"><button aria-expanded="false"><span class="who">Лопахин</span><span class="meta">2021–2024</span><span class="play">«Вишнёвый сад», Новая сцена</span></button><div class="more"><p>Купил сад и не знает, что теперь с ним делать. Весь третий акт — на одном дыхании, которое никак не выдохнуть.</p></div></div>
+    <div class="role"><button aria-expanded="false"><span class="who">Человек с чемоданом</span><span class="meta">2022</span><span class="play">«Перрон», моноспектакль, подвал на Покровке</span></button><div class="more"><p>Шестьдесят минут, один чемодан, ни одного слова вслух. Зрители сидели так близко, что слышали, как он считает шаги.</p></div></div>
+    <div class="role"><button aria-expanded="false"><span class="who">Эдгар</span><span class="meta">2019–2021</span><span class="play">«Король Лир», театр на Таганке</span></button><div class="more"><p>Роль-перевёртыш: нищий, безумец, сын. Три тела в одном, переодеваться приходилось прямо на глазах у зала.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="cue"><b>Звук 3<br>Голос</b></div>
+  <div>
+    <h2>Одна фраза, три дыхания</h2>
+    <div class="reg" role="group" aria-label="Регистр голоса">
+      <button aria-pressed="true" data-r="whisper">шёпот</button>
+      <button aria-pressed="false" data-r="flat">ровно</button>
+      <button aria-pressed="false" data-r="hall">в зал</button>
+    </div>
+    <div id="sample">Я не сказал, что ушёл. Я сказал, что вышел.</div>
+    <p class="dir" style="margin-top:20px">тембр — баритон, диапазон — два с половиной тона вверх от обычной речи; поёт, но предупреждает заранее</p>
+  </div>
+</section>
+
+<section>
+  <div class="cue"><b>Свет 4<br>Автор роли</b></div>
+  <div>
+    <h2>Играю тех, кто молчит громче</h2>
+    <p class="lead">Мне тридцать четыре. Вышел из ГИТИСа, семь лет в репертуарном театре, три года на независимых площадках. Люблю паузы длиннее, чем принято, и залы, где видно лица зрителей.</p>
+    <p class="lead">Работаю с режиссёрами, которым важнее честный провал, чем красивый результат.</p>
+    <dl class="facts">
+      <dt>Рост</dt><dd>181 см</dd>
+      <dt>Языки</dt><dd>русский, английский, немецкий (сцена)</dd>
+      <dt>Навыки</dt><dd>гитара, сценический бой, вождение</dd>
+      <dt>Города</dt><dd>Москва, готов к гастролям</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="cue"><b>Свет 5<br>Антракт</b></div>
+  <div>
+    <h2>Позвать на роль</h2>
+    <p class="dir">выходит. оставляет дверь открытой</p>
+    <a href="mailto:matvey@example.com">matvey@example.com</a>
+    <a href="tel:+70000000000">+7 000 000 00 00</a>
+    <a href="#">Telegram: @larin_na_stsene</a>
+  </div>
+</section>
+
+<footer>Конец акта. Свет гаснет по вашей команде.</footer>
+</div>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var text="выходит. останавливается на крестике. смотрит в зал и молчит четыре секунды";
+var typed=document.getElementById('typed'),ring=document.getElementById('ring'),hello=document.getElementById('hello'),timers=[];
+function clear(){timers.forEach(clearTimeout);timers=[]}
+function t(fn,ms){timers.push(setTimeout(fn,ms))}
+function run(){
+  clear();typed.textContent='';hello.classList.remove('on');ring.style.opacity=1;ring.textContent='4';
+  if(reduce){typed.textContent=text;ring.style.opacity=0;hello.classList.add('on');return}
+  var i=0;(function step(){typed.textContent=text.slice(0,++i);if(i<text.length)t(step,38);else countdown()})();
+}
+function countdown(){var n=4;(function tick(){ring.textContent=n;if(n===0){ring.style.opacity=0;hello.classList.add('on');return}n--;t(tick,1000)})()}
+document.getElementById('again').onclick=run;run();
+
+document.querySelectorAll('.role button').forEach(function(b){
+  b.onclick=function(){var r=b.parentNode,o=r.classList.toggle('open');b.setAttribute('aria-expanded',o)}
+});
+
+var s=document.getElementById('sample'),st={
+ whisper:{fontSize:'22px',letterSpacing:'.14em',fontWeight:300,opacity:.55},
+ flat:{fontSize:'28px',letterSpacing:'-.01em',fontWeight:300,opacity:1},
+ hall:{fontSize:'clamp(34px,7vw,64px)',letterSpacing:'-.05em',fontWeight:800,opacity:1}};
+function setReg(k){Object.assign(s.style,st[k]);document.querySelectorAll('.reg button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===k)})}
+document.querySelectorAll('.reg button').forEach(function(b){b.onclick=function(){setReg(b.dataset.r)}});setReg('whisper');
+
+document.getElementById('theme').onclick=function(){
+  var r=document.documentElement,dark=getComputedStyle(r).getPropertyValue('--paper').trim()==='#0e1238';
+  r.setAttribute('data-theme',dark?'light':'dark');
+};
+})();
+</script>
+</body>
+</html>

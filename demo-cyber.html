@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-PULSE // Нейро-дивергентный Портал</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyberBg: '#030305',
+                        cyberLime: '#CCFF00',
+                        cyberPurple: '#8A2BE2',
+                        cyberMagenta: '#FF007F',
+                        cyberDarkCard: '#0d0d12',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Courier New', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #030305;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030305;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8A2BE2;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #CCFF00;
+        }
+
+        /* Custom Cursor */
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #CCFF00;
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(204, 255, 0, 0.5);
+            background-color: rgba(138, 43, 226, 0.05);
+            transition: transform 0.1s ease-out;
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            display: inline-block;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 #FF007F;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 #CCFF00, 0 2px #8A2BE2;
+            clip: rect(85px, 450px, 140px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            10% { clip: rect(112px, 9999px, 76px, 0); }
+            20% { clip: rect(85px, 9999px, 5px, 0); }
+            30% { clip: rect(27px, 9999px, 119px, 0); }
+            40% { clip: rect(62px, 9999px, 13px, 0); }
+            50% { clip: rect(98px, 9999px, 42px, 0); }
+            60% { clip: rect(14px, 9999px, 88px, 0); }
+            70% { clip: rect(73px, 9999px, 102px, 0); }
+            80% { clip: rect(4px, 9999px, 33px, 0); }
+            90% { clip: rect(55px, 9999px, 91px, 0); }
+            100% { clip: rect(120px, 9999px, 15px, 0); }
+        }
+        @keyframes glitch-anim2 {
+            0% { clip: rect(76px, 9999px, 11px, 0); }
+            10% { clip: rect(19px, 9999px, 95px, 0); }
+            20% { clip: rect(104px, 9999px, 43px, 0); }
+            30% { clip: rect(41px, 9999px, 120px, 0); }
+            40% { clip: rect(88px, 9999px, 18px, 0); }
+            50% { clip: rect(5px, 9999px, 79px, 0); }
+            60% { clip: rect(115px, 9999px, 60px, 0); }
+            70% { clip: rect(34px, 9999px, 105px, 0); }
+            80% { clip: rect(90px, 9999px, 22px, 0); }
+            90% { clip: rect(12px, 9999px, 84px, 0); }
+            100% { clip: rect(65px, 9999px, 130px, 0); }
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(13, 13, 18, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        .glass-panel:hover {
+            border-color: rgba(204, 255, 0, 0.4);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 0.15);
+        }
+
+        /* Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Skill Bubble styling */
+        .skill-bubble {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 15px rgba(138,43,226,0.3);
+            border: 2px solid rgba(204,255,0,0.3);
+            background: radial-gradient(circle at 30% 30%, #8A2BE2, #030305);
+            color: #fff;
+        }
+        .skill-bubble:hover {
+            border-color: #CCFF00;
+            box-shadow: 0 0 30px #CCFF00;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyberLime selection:text-black">
+
+    <!-- Custom Cursor elements -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Background Interactive Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Notification / Message Toast -->
+    <div id="toast" class="fixed top-6 right-6 z-50 transform translate-x-full opacity-0 pointer-events-none transition-all duration-300 glass-panel px-6 py-4 rounded-xl border-cyberLime flex items-center gap-3 shadow-2xl">
+        <span class="w-3 h-3 rounded-full bg-cyberLime animate-ping"></span>
+        <span id="toast-text" class="font-mono text-sm text-cyberLime">Системное сообщение</span>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-40 glass-panel border-b border-cyberPurple/20 transition-all duration-300" id="navbar">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+            <a href="#" class="font-mono font-black text-xl sm:text-2xl tracking-tighter text-white flex items-center gap-2 shrink-0">
+                <span class="text-cyberLime">►</span>CYBER_<span class="text-cyberMagenta">PULSE</span>
+            </a>
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-mono text-xs xl:text-sm tracking-widest shrink-0">
+                <a href="#hero" class="hover:text-cyberLime transition-colors">// СТАРТ</a>
+                <a href="#manifesto" class="hover:text-cyberLime transition-colors">// МАНИФЕСТ</a>
+                <a href="#projects" class="hover:text-cyberLime transition-colors">// ПРОЕКТЫ</a>
+                <a href="#skills" class="hover:text-cyberLime transition-colors">// НЕЙРОСЕТЬ</a>
+                <a href="#stats" class="hover:text-cyberLime transition-colors">// СТАТИСТИКА</a>
+            </nav>
+            <a href="#contact" class="px-4 sm:px-5 py-2.5 rounded-lg bg-cyberLime text-black font-mono font-bold text-xs sm:text-sm tracking-wider hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(204,255,0,0.3)] shrink-0">
+                [ СВЯЗАТЬСЯ ]
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel mb-6 border border-cyberLime/30 text-cyberLime font-mono text-xs tracking-widest uppercase animate-pulse">
+                <span>[ СТАТУС: ПОТОК АКТИВЕН ]</span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black uppercase tracking-tight mb-6 leading-none">
+                <span class="glitch" data-text="CODE IS ART.">CODE IS ART.</span><br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyberLime via-cyberPurple to-cyberMagenta">ART IS CHAOS.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-gray-400 text-lg md:text-xl font-light mb-10 leading-relaxed">
+                Создаю иммерсивные цифровые интерфейсы, которые ломают привычные паттерны и заставляют пользователя задержать дыхание в пространстве вечного скролла.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyberPurple to-cyberMagenta text-white font-mono font-bold tracking-wider hover:opacity-90 transition-all shadow-[0_0_30px_rgba(138,43,226,0.5)] flex items-center justify-center gap-3 group">
+                    <span>ИССЛЕДОВАТЬ МИРЫ</span>
+                    <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+                <a href="#contact" id="magnetic-btn" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-cyberLime font-mono font-bold tracking-wider hover:bg-cyberLime/10 transition-all border border-cyberLime/30 flex items-center justify-center">
+                    [ ИНИЦИИРОВАТЬ СВЯЗЬ ]
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto / About Section -->
+    <section id="manifesto" class="py-32 relative border-t border-cyberPurple/20 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="font-mono text-xs text-cyberMagenta tracking-widest uppercase block mb-3">// 01. ФИЛОСОФИЯ КОДА</span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold uppercase mb-6 leading-tight">
+                        Архитектура <span class="text-cyberLime">будущего</span> в реальном времени.
+                    </h2>
+                    <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">
+                        Я не просто пишу код для отображения пикселей. Я проектирую цифровые экосистемы на стыке чистого брутализма, реактивной кинетики и глубокой оптимизации производительности.
+                    </p>
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="flex items-center gap-3 p-3 rounded-lg glass-panel border-l-4 border-cyberLime">
+                            <span class="text-cyberLime">01.</span> Синтез ультрасовременных 3D-шейдеров и плавных UI.
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg glass-panel border-l-4 border-cyberPurple">
+                            <span class="text-cyberPurple">02.</span> Безупречная отзывчивость на любых устройствах и экранах.
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg glass-panel border-l-4 border-cyberMagenta">
+                            <span class="text-cyberMagenta">03.</span> Эстетика киберпанка, переосмысленная под нужды современного UX.
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="w-full h-96 rounded-2xl glass-panel relative overflow-hidden flex items-center justify-center border border-cyberLime/30 group">
+                        <!-- Abstract cyber grid representation -->
+                        <div class="absolute inset-0 bg-[radial-gradient(#8A2BE2_1px,transparent_1px)] [background-size:24px_24px] opacity-30"></div>
+                        <div class="absolute w-64 h-64 rounded-full bg-cyberPurple/20 blur-3xl group-hover:bg-cyberLime/20 transition-all duration-700"></div>
+                        <div class="relative z-10 text-center p-8">
+                            <div class="font-mono text-6xl font-black text-cyberLime mb-2">99.9%</div>
+                            <div class="font-mono text-sm tracking-widest text-gray-400">ИНДЕКС СТАБИЛЬНОСТИ СИСТЕМЫ</div>
+                            <div class="mt-6 inline-block px-4 py-2 rounded bg-black/60 border border-cyberPurple text-xs font-mono text-cyberMagenta">
+                                // CORE_ENGINE v4.8.2
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery (Parallel Worlds) -->
+    <section id="projects" class="py-32 relative border-t border-cyberPurple/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="font-mono text-xs text-cyberLime tracking-widest uppercase block mb-3">// 02. РЕАЛИЗОВАННЫЕ ПРОТОТИПЫ</span>
+                    <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight">Галерея Миров</h2>
+                </div>
+                <p class="text-gray-400 font-mono text-sm mt-4 md:mt-0 max-w-sm">
+                    Каждый проект — автономная вселенная со своими законами физики и интерфейса.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-56 bg-gradient-to-br from-purple-950 via-black to-zinc-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-40 bg-[linear-gradient(45deg,#8A2BE2_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                        <div class="relative z-10 text-center group-hover:scale-110 transition-transform duration-500">
+                            <div class="font-mono text-4xl font-black text-cyberLime">NEURO_HUD</div>
+                            <div class="text-xs font-mono text-cyberMagenta mt-1">AI CODE ANALYZER</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberLime text-xs font-mono">React</span>
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberPurple text-xs font-mono">Three.js</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-2 text-white">Нейро-ассистент разработчика</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Интерфейс командной строки с голографической визуализацией потоков кода и подсказками в реальном времени.</p>
+                        <button onclick="openModal('NEURO_HUD', 'Полномасштабная система анализа кода с использованием кастомных шейдеров и обработки WebGL потоков в реальном времени. Стек: React, Three.js, Tailwind, Python Backend.')" class="w-full py-3 rounded-lg border border-cyberLime/40 text-cyberLime font-mono text-xs uppercase tracking-widest hover:bg-cyberLime hover:text-black transition-all font-bold">
+                            [ ИЗУЧИТЬ ДЕТАЛИ ]
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-56 bg-gradient-to-br from-pink-950 via-black to-zinc-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-40 bg-[radial-gradient(#FF007F_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                        <div class="relative z-10 text-center group-hover:scale-110 transition-transform duration-500">
+                            <div class="font-mono text-4xl font-black text-cyberMagenta">QUANTUM_FX</div>
+                            <div class="text-xs font-mono text-cyberLime mt-1">FINTECH PARTICLES</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberMagenta text-xs font-mono">Vue/Nuxt</span>
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberLime text-xs font-mono">WebGL</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-2 text-white">Финтех-платформа частиц</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Торговый терминал высокой точности с визуализацией котировок в виде динамических квантовых скоплений.</p>
+                        <button onclick="openModal('QUANTUM_FX', 'Интерактивная платформа для аналитики активов, где каждая сделка отображается как физическая частица в трехмерном поле гравитации. Стек: Nuxt 3, Canvas 2D / WebGL, Tailwind.')" class="w-full py-3 rounded-lg border border-cyberLime/40 text-cyberLime font-mono text-xs uppercase tracking-widest hover:bg-cyberLime hover:text-black transition-all font-bold">
+                            [ ИЗУЧИТЬ ДЕТАЛИ ]
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-panel rounded-2xl overflow-hidden group transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-56 bg-gradient-to-br from-indigo-950 via-black to-zinc-900 relative overflow-hidden flex items-center justify-center">
+                        <div class="absolute inset-0 opacity-40 bg-[linear-gradient(-45deg,#CCFF00_1px,transparent_1px)] bg-[size:16px_16px]"></div>
+                        <div class="relative z-10 text-center group-hover:scale-110 transition-transform duration-500">
+                            <div class="font-mono text-4xl font-black text-white">CYBER_ARENA</div>
+                            <div class="text-xs font-mono text-cyberPurple mt-1">ESPORTS IMMERSION</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberLime text-xs font-mono">Next.js</span>
+                            <span class="px-2.5 py-1 rounded bg-cyberPurple/20 text-cyberMagenta text-xs font-mono">GSAP</span>
+                        </div>
+                        <h3 class="text-xl font-bold uppercase mb-2 text-white">Иммерсивный кибер-портал</h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">Промо-сайт киберспортивной лиги с кинетической типографикой и интерактивными звуковыми триггерами.</p>
+                        <button onclick="openModal('CYBER_ARENA', 'Праздник визуального экстремизма для крупнейшей киберспортивной организации. Включает параллакс слои, динамический звук и адаптивную темную тему. Стек: Next.js, GSAP ScrollTrigger, Web Audio API.')" class="w-full py-3 rounded-lg border border-cyberLime/40 text-cyberLime font-mono text-xs uppercase tracking-widest hover:bg-cyberLime hover:text-black transition-all font-bold">
+                            [ ИЗУЧИТЬ ДЕТАЛИ ]
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kinetic Skills Matrix Section -->
+    <section id="skills" class="py-32 relative border-t border-cyberPurple/20 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center mb-12">
+            <span class="font-mono text-xs text-cyberLime tracking-widest uppercase block mb-3">// 03. КИНЕТИЧЕСКАЯ МАТРИЦА НАВЫКОВ</span>
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">Скилл-Сет Потока</h2>
+            <p class="text-gray-400 max-w-xl mx-auto font-mono text-sm">
+                Плавающие сферы технологий. Кликните по любой сфере, чтобы извлечь детальный лог опыта.
+            </p>
+        </div>
+
+        <!-- Interactive Bubbles Container -->
+        <div id="skills-container" class="relative w-full max-w-5xl mx-auto h-[450px] glass-panel rounded-3xl overflow-hidden border border-cyberPurple/30">
+            <!-- Bubbles will be injected via JS with physics -->
+        </div>
+    </section>
+
+    <!-- Statistics / Digital Pulse Section -->
+    <section id="stats" class="py-24 relative border-t border-cyberPurple/20 bg-cyberDarkCard/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="text-4xl md:text-6xl font-black font-mono text-cyberLime mb-2" data-target="4">0</div>
+                    <div class="font-mono text-xs text-gray-400 tracking-widest uppercase">ЛЕТ В IT-ИНДУСТРИИ</div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="text-4xl md:text-6xl font-black font-mono text-cyberPurple mb-2" data-target="42">0</div>
+                    <div class="font-mono text-xs text-gray-400 tracking-widest uppercase">ПРОЕКТОВ В ПРОДАКШЕНЕ</div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="text-4xl md:text-6xl font-black font-mono text-cyberMagenta mb-2" data-target="100">0</div>
+                    <div class="font-mono text-xs text-gray-400 tracking-widest uppercase">% ВЫЖИВАЕМОСТИ КОДА</div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="text-4xl md:text-6xl font-black font-mono text-white mb-2" data-target="24">0</div>
+                    <div class="font-mono text-xs text-gray-400 tracking-widest uppercase">ЧАСА ПОТОКА В СУТКИ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact Form Section -->
+    <section id="contact" class="py-32 relative border-t border-cyberPurple/20 overflow-hidden">
+        <!-- Pulsing Singularity Background Effect -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-r from-cyberPurple/20 to-cyberMagenta/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="font-mono text-xs text-cyberMagenta tracking-widest uppercase block mb-3">// 04. ТОЧКА СИНГУЛЯРНОСТИ</span>
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">Начать Передачу Данных</h2>
+                <p class="text-gray-400 font-mono text-sm">Заполните форму ниже, чтобы запустить протокол сотрудничества.</p>
+            </div>
+
+            <form id="contact-form" class="glass-panel p-8 md:p-12 rounded-3xl border border-cyberLime/30 space-y-6 shadow-2xl relative">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-mono text-xs text-cyberLime uppercase mb-2">// ВАШЕ ИМЯ</label>
+                        <input type="text" required placeholder="Агент_007" class="w-full bg-black/50 border border-cyberPurple/40 rounded-xl px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyberLime transition-colors">
+                    </div>
+                    <div>
+                        <label class="block font-mono text-xs text-cyberLime uppercase mb-2">// EMAIL ИЛИ ТЕЛЕГРАМ</label>
+                        <input type="text" required placeholder="@handler_name" class="w-full bg-black/50 border border-cyberPurple/40 rounded-xl px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyberLime transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-mono text-xs text-cyberLime uppercase mb-2">// СУТЬ ПРОЕКТА / ЗАДАЧИ</label>
+                    <textarea rows="4" required placeholder="Опишите параметры цифрового мира..." class="w-full bg-black/50 border border-cyberPurple/40 rounded-xl px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-cyberLime transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-cyberLime to-cyberPurple text-black font-mono font-black tracking-widest uppercase hover:opacity-90 transition-all shadow-[0_0_30px_rgba(204,255,0,0.4)] transform hover:scale-[1.01]">
+                    [ ОТПРАВИТЬ СИГНАЛ В НЕЙРОСЕТЬ ]
+                </button>
+            </form>
+
+            <div class="mt-20 text-center font-mono text-xs text-gray-500">
+                <p>© 2026 CYBER-PULSE // ВСЕ ПРАВА ЗАЩИТИЛИ КВАНТОВЫЕ СЕРВЕРА.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Modal -->
+    <div id="detail-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-panel max-w-lg w-full p-8 rounded-3xl border border-cyberLime relative transform scale-95 transition-transform duration-300" id="modal-content">
+            <button onclick="closeModal()" class="absolute top-6 right-6 font-mono text-cyberLime hover:text-white text-lg">[ X ]</button>
+            <div id="modal-tag" class="inline-block px-3 py-1 rounded bg-cyberPurple/20 text-cyberLime font-mono text-xs uppercase mb-4">// ПРОТОКОЛ</div>
+            <h3 id="modal-title" class="text-2xl font-black uppercase mb-4 text-white">Заголовок проекта</h3>
+            <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed mb-6 font-mono"></p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-lg bg-cyberLime text-black font-mono font-bold text-xs uppercase tracking-widest hover:bg-white transition-all">
+                [ ЗАКРЫТЬ ПРОТОКОЛ ]
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Custom Cursor Logic
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorOutline = document.getElementById('cursor-outline');
+        let mouseX = 0, mouseY = 0;
+        let outlineX = 0, outlineY = 0;
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.left = `${mouseX}px`;
+            cursorDot.style.top = `${mouseY}px`;
+        });
+
+        function animateCursor() {
+            outlineX += (mouseX - outlineX) * 0.15;
+            outlineY += (mouseY - outlineY) * 0.15;
+            cursorOutline.style.left = `${outlineX}px`;
+            cursorOutline.style.top = `${outlineY}px`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Background Canvas Interactive Shader / Particle Grid
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        for (let i = 0; i < 50; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.8,
+                vy: (Math.random() - 0.5) * 0.8,
+                radius: Math.random() * 2 + 1
+            });
+        }
+
+        function drawBackground() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = 'rgba(204, 255, 0, 0.15)';
+            ctx.strokeStyle = 'rgba(138, 43, 226, 0.15)';
+
+            particles.forEach((p, index) => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Connect nearby particles
+                for (let j = index + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            });
+
+            // Connect to mouse
+            particles.forEach(p => {
+                const dist = Math.hypot(p.x - mouseX, p.y - mouseY);
+                if (dist < 150) {
+                    ctx.strokeStyle = 'rgba(204, 255, 0, 0.3)';
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(mouseX, mouseY);
+                    ctx.stroke();
+                }
+            });
+
+            requestAnimationFrame(drawBackground);
+        }
+        drawBackground();
+
+        // Magnetic Hero Button Effect
+        const magneticBtn = document.getElementById('magnetic-btn');
+        magneticBtn.addEventListener('mousemove', (e) => {
+            const rect = magneticBtn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            magneticBtn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        magneticBtn.addEventListener('mouseleave', () => {
+            magneticBtn.style.transform = 'translate(0px, 0px)';
+        });
+
+        // Interactive Skill Bubbles Physics
+        const skillsContainer = document.getElementById('skills-container');
+        const skillsData = [
+            { name: "React / Next.js", desc: "Создание высокопроизводительных SPA и SSR приложений с передовой архитектурой состояний." },
+            { name: "Three.js & WebGL", desc: "Разработка трехмерных миров, кастомных шейдеров и иммерсивных веб-симуляций." },
+            { name: "TypeScript", desc: "Строгая типизация сложных систем, безопасный код и масштабируемая архитектура." },
+            { name: "Tailwind CSS", desc: "Молниеносная стилизация интерфейсов с глубокой кастомизацией под дизайн-системы." },
+            { name: "UI/UX & Figma", desc: "Проектирование пользовательских сценариев, киберпанк эстетики и интерактивных прототипов." },
+            { name: "Node.js / API", desc: "Проектирование надежных бэкенд шлюзов, WebSocket коммуникаций и асинхронных потоков." },
+            { name: "GSAP Animation", desc: "Сложные скролл-таймлайны, кинетическая типографика и плавные переходы." }
+        ];
+
+        let bubbleElements = [];
+        const containerRect = skillsContainer.getBoundingClientRect();
+
+        skillsData.forEach((skill, i) => {
+            const bubble = document.createElement('div');
+            bubble.className = 'skill-bubble';
+            bubble.innerText = skill.name;
+            const size = 110;
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+
+            let x = Math.random() * (skillsContainer.clientWidth - size);
+            let y = Math.random() * (skillsContainer.clientHeight - size);
+            let vx = (Math.random() - 0.5) * 1.5;
+            let vy = (Math.random() - 0.5) * 1.5;
+
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+
+            bubble.addEventListener('click', () => {
+                openModal(skill.name, skill.desc);
+            });
+
+            skillsContainer.appendChild(bubble);
+            bubbleElements.push({ el: bubble, x, y, vx, vy, size });
+        });
+
+        function updateBubbles() {
+            const containerWidth = skillsContainer.clientWidth;
+            const containerHeight = skillsContainer.clientHeight;
+
+            bubbleElements.forEach(b => {
+                b.x += b.vx;
+                b.y += b.vy;
+
+                if (b.x <= 0 || b.x + b.size >= containerWidth) b.vx *= -1;
+                if (b.y <= 0 || b.y + b.size >= containerHeight) b.vy *= -1;
+
+                b.el.style.left = `${b.x}px`;
+                b.el.style.top = `${b.y}px`;
+            });
+
+            requestAnimationFrame(updateBubbles);
+        }
+        updateBubbles();
+
+        // Animated Statistics Counters on Scroll
+        let animatedStats = false;
+        window.addEventListener('scroll', () => {
+            const statsSection = document.getElementById('stats');
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight && !animatedStats) {
+                animatedStats = true;
+                document.querySelectorAll('#stats [data-target]').forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let current = 0;
+                    const increment = target / 40;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.innerText = target + (target === 100 ? '%' : '+');
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = Math.floor(current);
+                        }
+                    }, 40);
+                });
+            }
+        });
+
+        // Modal Functionality
+        const modal = document.getElementById('detail-modal');
+        const modalContent = document.getElementById('modal-content');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+
+        function openModal(title, desc) {
+            modalTitle.innerText = title;
+            modalDesc.innerText = desc;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+        }
+
+        // Toast Notification Function
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            const toastText = document.getElementById('toast-text');
+            toastText.innerText = text;
+            toast.classList.remove('translate-x-full','opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full','opacity-0');
+            }, 4000);
+        }
+
+        // Contact Form Submission Handler
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('[ УСПЕХ ] СИГНАЛ УСПЕШНО ДОСТАВЛЕН В НЕЙРОСЕТЬ');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
