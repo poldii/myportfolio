@@ -250,6 +250,16 @@ body{background:#080d0f;color:var(--t);font-family:'Space Grotesk',Onest,system-
 .ticket-actions{display:flex;flex-wrap:wrap;align-items:stretch;gap:7px;margin-top:2px}.ticket-actions a{display:flex;flex:1 1 170px;align-items:center;justify-content:center;width:auto;margin:0;padding:9px 10px;background:#a83b30;color:#fff;border:0;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.04em;text-align:center;text-decoration:none}.ticket-actions a:hover{background:#c34a3d}.ticket-actions .ticket-email{background:#263b39;color:#f1f0e7}.ticket-actions .ticket-email:hover{background:#36504d}.ticket-actions .copy-contact{flex:1 1 140px;background:transparent;color:#34413d;border-color:#9a9c94;font-size:9px}.ticket-actions .copy-contact:hover,.ticket-actions .copy-contact:focus-visible,.ticket-actions .copy-contact.is-copied{background:#d7d5c9;color:#17201f;border-color:#69726d}.ticket-actions .copy-contact svg{width:13px;height:13px}
 @media(max-width:760px){.ticket-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}.ticket-actions .copy-contact{grid-column:1/-1}}
 @media(max-width:700px){.bar{padding-inline:12px}.bar b{font-size:14px}.bar nav{display:flex;align-items:center;gap:2px;font-size:12px}.bar nav a{display:grid;place-items:center;min-height:44px;padding:0 6px;white-space:nowrap}}
+
+/* Управление лентой работ мышью */
+.works-carousel{position:relative;isolation:isolate}
+.works-arrow{position:absolute;top:46%;z-index:6;display:grid;place-items:center;width:48px;height:48px;padding:0;border:1px solid #d9ede03d;border-radius:50%;background:rgb(13 25 27 / .58);color:#d9f2e6d9;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 8px 24px #0003;opacity:.72;transform:translateY(-50%);transition:opacity .22s,background .22s,border-color .22s,transform .22s}
+.works-prev{left:clamp(10px,3.2vw,46px)}.works-next{right:clamp(10px,3.2vw,46px)}
+.works-arrow svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.works-arrow:hover:not(:disabled){opacity:1;background:#ffa94d2e;border-color:#ffa94d88;transform:translateY(-50%) scale(1.06)}
+.works-arrow:disabled{opacity:.24;cursor:default}
+.works-arrow:focus-visible{opacity:1;outline:2px solid var(--s);outline-offset:3px}
+@media(max-width:700px){.works-arrow{display:none}}
 </style>
 </head>
 <body>
@@ -274,7 +284,11 @@ body{background:#080d0f;color:var(--t);font-family:'Space Grotesk',Onest,system-
 
 <section class="wk" id="works">
  <div class="hd"><h2>Каждый проект — отдельный мир.</h2></div>
- <div class="hs" id="hs"></div>
+ <div class="works-carousel">
+  <button class="works-arrow works-prev" id="works-prev" type="button" aria-label="Предыдущие работы" aria-controls="hs" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+  <div class="hs" id="hs"></div>
+  <button class="works-arrow works-next" id="works-next" type="button" aria-label="Следующие работы" aria-controls="hs"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+</div>
 </section>
 
 <section class="vd" id="price">
@@ -351,6 +365,10 @@ WORKS.forEach((w,i)=>{const card=document.createElement('article');card.classNam
  const b=document.createElement('button');b.type='button';b.className='sign-open';b.setAttribute('aria-label','Открыть проект: '+w[0]);b.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${ICO[i%ICO.length]}"/></svg><b>${w[0]}</b><small>${w[1]}</small>`;b.onclick=()=>dive(i);card.append(preview,b);hs.appendChild(card)});
 if('IntersectionObserver'in window){const previewObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{const preview=entry.target;if(entry.isIntersecting){if(preview.dataset.src){preview.src=preview.dataset.src;delete preview.dataset.src}}else if(preview.getAttribute('src')!=='about:blank'){preview.dataset.src=preview.getAttribute('src');preview.src='about:blank'}}),{root:hs,rootMargin:'0px 120px',threshold:.01});$$('.sign-preview').forEach(preview=>previewObserver.observe(preview))}else $$('.sign-preview').forEach(preview=>{preview.src=preview.dataset.src;delete preview.dataset.src});
 let dn=false,sx,sl;hs.onpointerdown=e=>{if(e.pointerType==='mouse'&&!e.target.closest('.sign')){dn=true;sx=e.pageX;sl=hs.scrollLeft}};addEventListener('pointerup',()=>dn=false);hs.onpointermove=e=>{if(dn)hs.scrollLeft=sl-(e.pageX-sx)};
+const worksPrev=$('#works-prev'),worksNext=$('#works-next');
+function updateWorksArrows(){const max=hs.scrollWidth-hs.clientWidth;worksPrev.disabled=hs.scrollLeft<=2;worksNext.disabled=hs.scrollLeft>=max-2}
+function scrollWorks(direction){const card=hs.querySelector('.sign');if(!card)return;const gap=parseFloat(getComputedStyle(hs).gap)||0;hs.scrollBy({left:direction*(card.getBoundingClientRect().width+gap),behavior:calm?'auto':'smooth'})}
+worksPrev.addEventListener('click',()=>scrollWorks(-1));worksNext.addEventListener('click',()=>scrollWorks(1));hs.addEventListener('scroll',updateWorksArrows,{passive:true});addEventListener('resize',updateWorksArrows);requestAnimationFrame(updateWorksArrows);
 function show(i){wi=(i+WORKS.length)%WORKS.length;const w=WORKS[wi];$('#vt').textContent=w[0];$('#vg').textContent=w[1];$('#vo').href=w[2];$('#vi').src=w[2]}
 let returnFocus=null;function dive(i){returnFocus=document.activeElement;const card=hs.children[i];card?.classList.add('is-opening');setTimeout(()=>card?.classList.remove('is-opening'),calm?0:720);const d=$('#dv');d.classList.remove('on');void d.offsetWidth;d.classList.add('on');setTimeout(()=>{show(i);$('#vw').classList.add('on');document.body.style.overflow='hidden';$('#vx').focus()},calm?0:330)}
 function shut(){$('#vw').classList.remove('on');$('#vi').src='about:blank';document.body.style.overflow='';if(returnFocus)returnFocus.focus()}
@@ -378,3 +396,4 @@ new IntersectionObserver((e,o)=>e.forEach(x=>{if(x.isIntersecting){x.target.clas
 </script>
 </body>
 </html>
+
