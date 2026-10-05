@@ -236,7 +236,7 @@ addEventListener('pointermove',e=>{if(!inter)return;
  pup.forEach(p=>{const r=p.parentElement.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),d=Math.hypot(dx,dy)||1,k=Math.min(3,d/40);p.style.transform=`translate(${dx/d*k}px,${dy/d*k}px)`})});
 
 /* viewer */
-const WORKS=[{t:'Стройка «Каркас»',g:'Стандарт',u:'demo-standard-stroyka.html'},{t:'Кофейня Ember',g:'Бизнес',u:'demo-business-coffee.html'},{t:'NORD · Исландия',g:'Кастом',u:'demo-custom-nord.html'},{t:'Актёр · Суфлёрский экземпляр',g:'Кастом',u:'demo-actor-1.html'},{t:'Актёр · Контактный лист',g:'Кастом',u:'demo-actor-2.html'},{t:'Актёр · Сайт меняется с ролями',g:'Кастом',u:'demo-actor-3.html'},{t:'Репетитор · Александр',g:'Репетитор',u:'demo-tutor-1.html'},{t:'Репетитор · Елена Сергеевна',g:'Репетитор',u:'demo-tutor-2.html'},{t:'CYBER-PULSE',g:'Неон',u:'demo-cyber.html'}];
+const WORKS=[{t:'Стройка «Каркас»',g:'Стандарт',u:'demo-standard-stroyka.html'},{t:'Кофейня Ember',g:'Бизнес',u:'demo-business-coffee.html'},{t:'NORD · Исландия',g:'Кастом',u:'demo-custom-nord.html'},{t:'Актёр · Суфлёрский экземпляр',g:'Кастом',u:'demo-actor-1.html'},{t:'Актёр · Контактный лист',g:'Кастом',u:'demo-actor-2.html'},{t:'Актёр · Сайт меняется с ролями',g:'Кастом',u:'demo-actor-3.html'},{t:'Репетитор · Елена Сергеевна',g:'Репетитор',u:'demo-tutor-2.html'},{t:'CYBER-PULSE',g:'Неон',u:'demo-cyber.html'}];
 let wi=0;const vw=$('#vw'),vfr=$('#vfr'),vf=$('#vf');
 function show(i){wi=(i+WORKS.length)%WORKS.length;const w=WORKS[wi];$('#vtitle').textContent=w.t;$('#vtag').textContent=w.g;$('#vcount').textContent=(wi+1)+' / '+WORKS.length;$('#vopen').href=w.u;vfr.title='Демо: '+w.t;vfr.src=w.u}
 function openW(i){show(i);vw.classList.add('on');$('#vclose').focus()}
