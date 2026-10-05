@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1040" viewBox="0 0 900 1040" fill="none">
+  <defs><pattern id="paper" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 13.5h14" stroke="#171a25" stroke-opacity=".045"/></pattern></defs>
+  <path fill="#d8d0c1" d="M0 0h900v1040H0z"/><path fill="url(#paper)" d="M0 0h900v1040H0z"/>
+  <path fill="#ed5d32" d="M450 172c132 0 239 107 239 239 0 73-33 138-84 182 51 45 84 110 84 183 0 132-107 239-239 239S211 908 211 776c0-73 33-138 84-183-51-44-84-109-84-182 0-132 107-239 239-239z"/>
+  <path stroke="#171a25" stroke-width="4" d="M450 123v760m-276-493h552M255 221c107 89 171 210 195 362 24-152 88-273 195-362M255 879c107-89 171-210 195-362 24 152 88 273 195 362"/>
+  <path stroke="#171a25" stroke-width="2" d="M450 167c-71 96-107 198-107 306 0 109 36 211 107 306 71-95 107-197 107-306 0-108-36-210-107-306zm0 44c42 76 64 163 64 262s-22 186-64 262c-42-76-64-163-64-262s22-186 64-262zm-153 29c50 112 75 224 75 334s-25 222-75 334m306-668c-50 112-75 224-75 334s25 222 75 334M230 451c86 43 159 65 220 65 61 0 134-22 220-65m-440 86c86-43 159-65 220-65 61 0 134 22 220 65"/>
+  <path stroke="#263c8c" stroke-width="3" d="M450 145 477 359l171-132-132 171 214 27-214 27 132 171-171-132-27 214-27-214-171 132 132-171-214-27 214-27-132-171 171 132z"/>
+  <path fill="#d8d0c1" d="M450 374c12 26 29 45 52 58-23 13-40 32-52 58-12-26-29-45-52-58 23-13 40-32 52-58zm0 188c12 26 29 45 52 58-23 13-40 32-52 58-12-26-29-45-52-58 23-13 40-32 52-58z"/>
+  <circle cx="450" cy="516" r="104" stroke="#171a25" stroke-width="3"/><circle cx="450" cy="516" r="89" stroke="#171a25" stroke-width="1.5" stroke-dasharray="2 7"/>
+  <circle cx="450" cy="516" r="13" fill="#171a25"/><path stroke="#171a25" stroke-width="2" d="M450 366v300m-150-150h300m-256-106 212 212m0-212L344 622"/>
+  <path fill="#171a25" d="M101 90h59v3h-59zm0 11h92v2h-92zm0 11h73v2h-73z"/><text x="101" y="78" fill="#171a25" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">ФОРМА / РИТМ / ЗНАК</text>
+  <text x="60" y="974" fill="#171a25" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">МАТЕРИАЛ / ОРНАМЕНТ</text>
+</svg>

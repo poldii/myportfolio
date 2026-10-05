@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="910" viewBox="0 0 760 910" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="84" y1="52" x2="648" y2="856" gradientUnits="userSpaceOnUse"><stop stop-color="#d6cab7"/><stop offset="1" stop-color="#b8aa98"/></linearGradient>
+    <linearGradient id="skin" x1="110" y1="302" x2="639" y2="600" gradientUnits="userSpaceOnUse"><stop stop-color="#e7c6a6"/><stop offset=".53" stop-color="#c69472"/><stop offset="1" stop-color="#a77458"/></linearGradient>
+    <linearGradient id="shadow" x1="296" y1="429" x2="469" y2="696" gradientUnits="userSpaceOnUse"><stop stop-color="#ad8064" stop-opacity="0"/><stop offset="1" stop-color="#61483f" stop-opacity=".58"/></linearGradient>
+    <pattern id="grain" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r=".7" fill="#fff" opacity=".3"/><circle cx="11" cy="10" r=".6" fill="#161a24" opacity=".13"/></pattern>
+    <clipPath id="crop"><path d="M0 0h760v910H0z"/></clipPath>
+  </defs>
+  <g clip-path="url(#crop)">
+    <path fill="#263c8c" d="M0 0h760v910H0z"/>
+    <path fill="#334b9d" d="M0 0h305L0 436z"/>
+    <path fill="#1d2b63" d="M533 0h227v910H488z"/>
+    <path stroke="#f18b64" stroke-width="2" d="M52 0v910M710 0v910" opacity=".65"/>
+    <path stroke="#f9f6ef" stroke-width="1" d="M0 143h760M0 735h760" opacity=".27"/>
+    <circle cx="543" cy="177" r="118" fill="#ed5d32"/>
+    <circle cx="543" cy="177" r="100" stroke="#f9f6ef" stroke-width="1.2" opacity=".75"/>
+    <circle cx="543" cy="177" r="86" stroke="#f9f6ef" stroke-width="1" stroke-dasharray="1 6"/>
+    <path fill="url(#paper)" d="M49 910V365c46-43 95-68 149-72 72-5 131 19 183 70 39 38 81 61 133 74 64 16 103 56 118 120 11 48-1 89-34 122-13 14-28 27-42 40L430 910z"/>
+    <path fill="url(#skin)" d="M-10 471c53-48 115-82 183-95 57-11 98-3 138 20 42 24 72 56 115 83 47 30 93 51 155 55 82 5 136 42 164 100 24 49 14 100-23 140-27 29-66 50-119 64-86 23-169 29-253 27-108-2-220-24-360-75V471z"/>
+    <path fill="url(#shadow)" d="M122 390c72-22 132-17 181 8 43 22 72 53 115 81 47 30 99 48 166 56 68 8 119 33 148 76 16 24 21 51 13 77-38 54-113 89-210 106-156 26-321 12-535-60V497c38-45 80-80 122-107z"/>
+    <path stroke="#725348" stroke-width="3" d="M24 490c57-48 119-85 190-101 49-11 89-4 128 19 44 26 77 61 125 92 48 30 98 47 158 53 41 4 72 16 96 36" opacity=".44"/>
+    <path stroke="#473940" stroke-width="3" d="M226 429c52 5 88 30 120 65 34 37 72 75 127 95m-218-92c34 32 58 62 71 101m-19-142c38 17 60 44 79 74" opacity=".72"/>
+    <g stroke="#151a27" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke-width="4" d="M354 520c-23-52-11-101 30-139 33-31 79-38 112-17 35 22 46 63 24 101-19 34-59 58-92 79-27 16-48 34-58 63-7 22-5 42 6 60m-23-177c44 22 94 13 131-20m-105-35c13 32 43 54 76 59m-41-111c31 4 52 22 59 48m-4 84c-8-24-2-47 14-64m-48 120c31-4 60 8 77 34"/>
+      <path stroke-width="2.3" d="M367 560c17-13 37-20 61-21m-64-94c-13 19-18 40-13 64m107-110c18-13 34-17 50-12m-36 175c16 2 31 10 42 23m-97-214c12-13 27-19 45-18"/>
+      <path stroke-width="3" d="m444 365 3-32 18 21 24-27 4 38 31-5-20 27 17 23-34-6-10 32-9-31-35 10 20-26-19-24z"/>
+      <path stroke-width="1.7" d="M446 346v56m-16-35 49 21m-53 14 51-45"/>
+      <path fill="#ed5d32" stroke-width="2" d="M392 468c4-13 19-15 26-5 6 10-4 25-16 37-10-11-15-22-10-32z"/>
+      <path fill="#ed5d32" stroke-width="2" d="M474 501c4-13 19-15 26-5 6 10-4 25-16 37-10-11-15-22-10-32z"/>
+      <circle cx="414" cy="434" r="4" fill="#151a27" stroke="none"/><circle cx="470" cy="460" r="4" fill="#151a27" stroke="none"/><circle cx="449" cy="520" r="3" fill="#151a27" stroke="none"/>
+    </g>
+    <path fill="url(#grain)" d="M0 0h760v910H0z" opacity=".4"/>
+    <path fill="#f9f6ef" d="M41 795h58v2H41zm0 15h101v2H41zm0 15h76v2H41z" opacity=".75"/>
+    <text x="43" y="774" fill="#f9f6ef" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">HAND DRAWN / 001</text>
+    <text x="702" y="885" fill="#f9f6ef" font-family="Arial,sans-serif" font-size="10" letter-spacing="1" transform="rotate(-90 702 885)">СТУДИЯ СЛЕД · ЭСКИЗ НА КОЖЕ</text>
+  </g>
+</svg>

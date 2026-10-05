@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1040" viewBox="0 0 900 1040" fill="none">
+  <defs><pattern id="grain" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="4" cy="6" r=".8" fill="#eee9df" opacity=".3"/><circle cx="16" cy="17" r=".6" fill="#eee9df" opacity=".25"/></pattern></defs>
+  <path fill="#202432" d="M0 0h900v1040H0z"/><path fill="url(#grain)" d="M0 0h900v1040H0z"/>
+  <circle cx="450" cy="500" r="310" stroke="#9b9aa0" stroke-width="1" opacity=".5"/><circle cx="450" cy="500" r="274" stroke="#9b9aa0" stroke-width="1" stroke-dasharray="1 8" opacity=".65"/>
+  <g stroke="#eee9df" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="5" d="M454 788c-11-121-11-233 1-333 13-112 9-210-12-294m12 294c-68-64-125-131-171-200m170 200c54-90 112-161 174-214m-174 214c-87-24-169-31-248-20m248 20c77 40 145 86 204 141"/>
+    <path stroke-width="3" d="M442 605c-64-78-90-154-79-228m-1 228c-57-25-109-32-157-20m415-226c-62 41-124 60-185 56m113 107c-17-60-13-112 13-158m-289 176c-5 73 4 141 29 203m138-572c37 43 60 94 68 153m-213-240c-3 52 8 102 35 151m257-72c-36 22-68 50-94 86m-343 213c37-5 74 1 110 18m402 63c-43-3-81 6-116 27"/>
+    <path stroke-width="2" d="M379 375c18-54 49-91 93-111m-149 262c42-4 80 7 113 33m147-174c-38 16-67 43-86 80m151 58c-43-11-81-7-114 12m-180-222c19 48 45 83 79 103m-144 190c-15-37-18-71-8-103m237-71c28-31 60-48 98-52m-188 277c-36-28-71-42-108-40"/>
+  </g>
+  <g stroke="#ed5d32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M440 500c-35-32-45-67-30-106 15-40 49-58 97-54 29 30 36 64 21 102-15 39-44 58-88 58zm0 0c-7-48 6-101 40-160m-39 153c-37-32-74-46-112-42m136-197c-10-37 2-66 35-86 34 18 44 47 32 85-15 29-37 44-68 46zm-224 75c-40 2-64-17-72-57 27-30 58-34 91-12 24 21 32 45 21 72zm421-84c18-36 47-48 86-37 10 39-5 67-43 84-32 8-56-1-70-27zm57 302c-14 40-43 55-86 46-14-40-1-71 38-93 33-12 60-4 78 24z"/>
+    <path d="M410 394c25 2 45 15 60 38m-266 6c29-10 57-5 84 15m333-105c-24 17-37 42-38 75m-84 246c-12-31-10-61 7-89m-251-56c22 4 38 15 49 34"/>
+  </g>
+  <circle cx="451" cy="499" r="19" fill="#ed5d32"/><circle cx="451" cy="499" r="7" fill="#202432"/>
+  <path fill="#eee9df" d="M61 895h96v2H61zm0 13h145v2H61z"/><text x="61" y="879" fill="#eee9df" font-family="Arial,sans-serif" font-size="11" letter-spacing="2">ФОРМА / БОТАНИКА / ЖИВОЕ</text>
+  <path stroke="#ed5d32" stroke-width="2" d="M769 132v81m-40-40h81m-69-29 58 58m0-58-58 58"/>
+  <text x="60" y="974" fill="#eee9df" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">МАТЕРИАЛ / ГРАФИКА</text>
+</svg>

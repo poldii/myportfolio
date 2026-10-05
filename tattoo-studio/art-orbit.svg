@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1040" viewBox="0 0 900 1040" fill="none">
+  <defs><pattern id="dot" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="3" cy="4" r="1" fill="#263c8c" opacity=".22"/></pattern><linearGradient id="wash" x1="190" y1="120" x2="760" y2="940" gradientUnits="userSpaceOnUse"><stop stop-color="#e5c8a6"/><stop offset="1" stop-color="#ba9578"/></linearGradient></defs>
+  <path fill="#cfc4b3" d="M0 0h900v1040H0z"/><path fill="url(#dot)" d="M0 0h900v1040H0z"/>
+  <circle cx="598" cy="330" r="242" fill="#263c8c"/><circle cx="598" cy="330" r="212" stroke="#eee9df" stroke-width="2"/><circle cx="598" cy="330" r="190" stroke="#ed5d32" stroke-width="1.5" stroke-dasharray="2 10"/>
+  <path fill="url(#wash)" d="M121 1040c-39-159-39-295-3-410 33-106 103-189 204-251 86-53 185-61 282-28l129 44c94 32 144 99 144 192 0 63-23 126-70 185-39 49-62 99-68 152l-10 116z"/>
+  <path stroke="#263c8c" stroke-width="3" d="M310 879c121-127 182-258 180-394-1-95 23-184 73-267m-233 608c132-91 244-136 335-135M382 678c-40-104-35-212 15-323m78 451c71-76 156-118 253-127"/>
+  <g stroke="#171a25" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="5" d="M481 693c-23-48-18-101 17-158 31-51 72-91 119-121 47-30 97-43 151-37m-192 32c-19-45-19-94 4-146 17-39 48-76 90-112m-174 348c-47-11-90-6-129 16-47 26-83 71-108 136m210-93c37 38 82 53 137 44 55-9 106-37 153-84m-261 79c17 60 17 116 0 168"/>
+    <path stroke-width="2.2" d="M614 548c-10-35 1-65 30-91 24-21 54-32 89-32m-77-166c11 35 6 70-15 106-17 30-43 52-77 67m-192 229c29-11 54-7 76 11 17 15 27 35 31 60m102-263c37-5 66 6 86 32 16 21 23 47 21 78m-169-125c30-15 58-14 83 3 23 16 36 40 40 73m-74 185c-3 29-16 52-41 68-23 15-49 21-80 17"/>
+    <path stroke-width="3" d="M646 312c12-27 34-46 64-56m-17 242c27 7 48 23 63 47m-252-57c-23-28-29-59-20-93m64 252c-17 22-43 35-76 39m111-328c11 26 9 51-7 76"/>
+    <path stroke="#ed5d32" stroke-width="5" d="M550 412c18-29 43-48 77-57m-216 203c16-32 41-55 75-68"/>
+    <circle cx="661" cy="481" r="10" stroke-width="3"/><circle cx="442" cy="594" r="6" stroke-width="3"/><path d="M505 545c8-5 16-5 24 1m-36 3c-4 9-2 17 6 25" stroke-width="2"/>
+  </g>
+  <path fill="#263c8c" d="m124 144 7 24 25-9-20 18 20 18-25-9-7 24-7-24-25 9 20-18-20-18 25 9z"/><path stroke="#ed5d32" stroke-width="2" d="M748 813h92m-46-46v92m-32-78 64 64m0-64-64 64"/>
+  <text x="56" y="975" fill="#263c8c" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">МАТЕРИАЛ / ТОНКАЯ ЛИНИЯ</text>
+</svg>

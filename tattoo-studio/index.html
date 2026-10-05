@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101110" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'self'" />
+    <meta name="description" content="Авторские татуировки в стилях blackwork и графика. Расскажите идею мастеру студии «След»." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="След — авторские татуировки" />
+    <meta property="og:description" content="Авторский blackwork и графика. Эскиз татуировки начинается с вашей идеи." />
+    <title>След — татуировка, в которой узнаёшь себя</title>
+    <link rel="icon" href="brand-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="gsap.min.js" defer></script>
+    <script src="ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="След — на главную">
+        <span class="brand-mark" aria-hidden="true">С</span>
+        <span class="brand-name">след<span class="brand-period">.</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#approach">Подход</a>
+        <a href="#styles">Направления</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="header-cta" href="#booking">Записаться <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+        <span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Мобильная навигация" hidden>
+      <a href="#approach">Подход</a><a href="#styles">Направления</a><a href="#faq">Вопросы</a><a href="#booking">Записаться</a>
+    </nav>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="overline"><span class="status-dot"></span> Авторская тату-студия</p>
+          <h1 id="hero-title"><span class="hero-title-line">ТВОЯ КОЖА.</span><span class="hero-title-line">ТВОЙ ЗНАК.</span></h1>
+          <div class="hero-bottom">
+          <p class="hero-description">Авторский blackwork и графика. Эскиз начинается с твоей идеи, а не с готового шаблона.</p>
+            <a class="button button-dark" href="#booking">Начать с идеи <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <img class="hero-photo" src="hero-photo.webp" alt="Тату-мастер наносит рисунок на кожу клиента" width="1500" height="2000" fetchpriority="high" />
+        <a class="hero-scroll" href="#approach"><span class="scroll-line"></span> Листай ниже</a><span class="hero-index">Авторский подход · эскиз с нуля</span>
+      </section>
+
+      <div class="ticker" aria-label="Направления студии"><div class="ticker-track" aria-hidden="true"><span>Линия <i>✳</i></span><span>Blackwork <i>✳</i></span><span>Символы <i>✳</i></span><span>Графика <i>✳</i></span><span>Линия <i>✳</i></span><span>Blackwork <i>✳</i></span><span>Символы <i>✳</i></span><span>Графика <i>✳</i></span></div></div>
+
+      <section class="intro section-pad" id="approach" aria-labelledby="intro-title">
+        <div class="section-kicker"><span>01</span><span>Сначала разговор</span></div>
+        <div class="intro-main">
+          <h2 id="intro-title">Сначала мысль.<br /><em>Потом знак.</em></h2>
+          <div class="intro-aside"><p>Работаем с идеей, характером и тем, как рисунок будет жить на теле. Вместе найдём форму, которая останется твоей.</p><a class="text-link" href="#booking">Рассказать свою историю <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="process-line" aria-label="Этапы работы">
+          <article class="process-step"><span class="step-number">01</span><h3>Обсуждаем</h3><p>Поймём смысл, место и размер будущей татуировки.</p></article>
+          <article class="process-step"><span class="step-number">02</span><h3>Создаём эскиз</h3><p>Подготовим авторскую композицию под твой запрос.</p></article>
+          <article class="process-step"><span class="step-number">03</span><h3>Набиваем</h3><p>Согласуем эскиз, стоимость и дату сеанса.</p></article>
+        </div>
+      </section>
+
+      <section class="styles section-pad" id="styles" aria-labelledby="styles-title">
+        <div class="section-kicker"><span>02</span><span>Направления</span></div>
+        <div class="styles-heading"><h2 id="styles-title">Выбери<br />свой язык.</h2><p>Направления для первого разговора.<br />Каждый эскиз создаём с нуля.</p></div>
+        <div class="gallery-controls" role="group" aria-label="Фильтр фотографий">
+          <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">Все кадры</button>
+          <button class="gallery-filter" type="button" data-filter="skin" aria-pressed="false">На коже</button>
+          <button class="gallery-filter" type="button" data-filter="process" aria-pressed="false">В процессе</button>
+          <span class="gallery-count" aria-live="polite">3 фотографии</span>
+        </div>
+        <div class="styles-grid">
+          <article class="style-tile style-tile-large" data-category="skin">
+              <img src="tattoo-floral.webp" alt="Цветочные татуировки тонкими линиями на руке" loading="lazy" width="1201" height="1800" />
+            <button class="tile-open" type="button" aria-label="Открыть фотографию цветочных татуировок"></button>
+            <div class="style-label"><h3>Флора на коже</h3><p>Фото татуировки · Unsplash</p></div><span class="style-index">A</span>
+          </article>
+          <article class="style-tile style-tile-small" data-category="skin">
+              <img src="tattoo-blackwork.webp" alt="Чёрно-серая татуировка на руке" loading="lazy" width="1600" height="1067" />
+            <button class="tile-open" type="button" aria-label="Открыть фотографию татуировки на руке"></button>
+            <div class="style-label"><h3>Чёрный пигмент</h3><p>Фото татуировки · Unsplash</p></div><span class="style-index">B</span>
+          </article>
+          <article class="style-tile style-tile-small" data-category="process">
+              <img src="tattoo-process.webp" alt="Тату-мастер наносит рисунок на руку клиента" loading="lazy" width="1200" height="1800" />
+            <button class="tile-open" type="button" aria-label="Открыть фотографию сеанса татуировки"></button>
+            <div class="style-label"><h3>В работе</h3><p>Кадр сеанса · Pexels</p></div><span class="style-index">C</span>
+          </article>
+        </div>
+        <p class="gallery-note">Работы в блоке демонстрационные. Перед запуском замени их на портфолио мастера.</p>
+      </section>
+
+      <dialog class="lightbox" aria-label="Просмотр фотографии">
+        <button class="lightbox-close" type="button" aria-label="Закрыть фотографию">×</button>
+        <img class="lightbox-image" alt="" width="1600" height="1200" />
+        <p class="lightbox-caption"></p>
+      </dialog>
+
+      <section class="statement" aria-label="Принцип работы"><blockquote>Не выбирай картинку.<br /><em>Придумай свою.</em></blockquote><img class="statement-mark" src="brand-mark.svg" alt="" width="90" height="90" loading="lazy" /></section>
+
+      <section class="faq section-pad" id="faq" aria-labelledby="faq-title">
+        <div class="section-kicker"><span>03</span><span>Перед встречей</span></div>
+        <div class="faq-layout"><h2 id="faq-title">Есть<br />вопросы?</h2>
+          <div class="faq-list">
+            <details><summary>Что написать в заявке, если есть только идея?<span aria-hidden="true">+</span></summary><p>Этого достаточно. Расскажи, что тебя зацепило, покажи референс или опиши настроение — начнём с разговора.</p></details>
+            <details><summary>Можно принести свой эскиз?<span aria-hidden="true">+</span></summary><p>Да. Разберём, что в нём важно для тебя, и адаптируем композицию под размер и место.</p></details>
+            <details><summary>Как узнать стоимость?<span aria-hidden="true">+</span></summary><p>Цена зависит от размера, сложности и времени. После обсуждения идеи мастер сориентирует по стоимости до записи.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking" id="booking" aria-labelledby="booking-title">
+        <div class="booking-copy"><div class="section-kicker section-kicker-light"><span>04</span><span>Начнём с идеи</span></div>
+          <h2 id="booking-title">Расскажи,<br />что задумал<span>.</span></h2>
+          <p>Напишем тебе, обсудим эскиз и сориентируем по стоимости.</p>
+          <span class="booking-asterisk" aria-hidden="true">✳</span>
+        </div>
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="field-row"><div class="field"><label for="client-name">Как к тебе обращаться</label><input id="client-name" name="name" autocomplete="name" minlength="2" maxlength="80" aria-describedby="client-name-error" required placeholder="Например, Оля…" /><p class="field-error" id="client-name-error" hidden></p></div>
+            <div class="field"><label for="contact">Телефон или Telegram</label><input id="contact" name="contact" autocomplete="off" inputmode="text" spellcheck="false" minlength="5" maxlength="80" aria-describedby="contact-error" required placeholder="Например, +7 900 000-00-00…" /><p class="field-error" id="contact-error" hidden></p></div></div>
+          <div class="field"><label for="idea">Какая идея крутится в голове?</label><textarea id="idea" name="idea" rows="3" maxlength="1200" aria-describedby="idea-error" placeholder="Опиши идею, место, размер или настроение…" required></textarea><p class="field-error" id="idea-error" hidden></p></div>
+          <div class="form-bottom"><p>Макет формы: перед запуском подключи канал приёма заявок студии.</p><button class="button button-paper" type="submit">Обсудить татуировку <span aria-hidden="true">↗</span></button></div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <label class="trap-field" aria-hidden="true">Оставь это поле пустым<input name="website" tabindex="-1" autocomplete="off" /></label>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#top" aria-label="След — в начало"><span class="brand-mark" aria-hidden="true">С</span><span class="brand-name">след<span class="brand-period">.</span></span></a>
+      <p>Авторская тату-студия<br /><span>Город и адрес уточняются</span></p>
+      <a class="footer-top" href="#top">Наверх ↑</a>
+      <small>© <span id="year"></span> След. Концепт сайта.</small>
+    </footer>
+  </body>
+</html>
+
+
